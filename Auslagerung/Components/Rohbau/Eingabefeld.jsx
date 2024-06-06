@@ -6,34 +6,36 @@ const Eingabefeld = (props) => {
     settxtvalue(t) 
     text = t; 
     }
+    useEffect(()=>{
+      
+     },[props])
   return (
-    <View>
-      <TextInput style={styles.Text} onChangeText={text=>textChangeHandler(text)} value={txtvalue} placeholder={props.Labname} placeholderTextColor={'#f1f5f9'}>        
+    <View >
+      <TextInput style={styles.inputsanity} onChangeText={text=>textChangeHandler(text)} value={txtvalue} placeholder={props.Labname} placeholderTextColor={'#f1f5f9'}>        
       </TextInput>
     </View>
   )
 }
 
-const styles = ()=>StyleSheet.create({
-  Text : {
+const styles = StyleSheet.create({
+  inputsanity:{
     color: '#FFF',
     fontSize:16,
     marginBottom:4,
     textAlign:'left',
     padding: 10,
-    paddingLeft:60,
+    paddingLeft:20,
     paddingHorizontal:15,
     borderWidth:2,
     width:'80%',
     alignSelf:'center',
-    borderColor: '#475569',
+    borderColor: '#047857',
     borderRadius:6,
     marginVertical:15,
-    color:'#f8fafc',
+    
     zIndex:10,
     backgroundColor: '#6b728090'
-  },
-
-
+  }
+  
 });
 export default Eingabefeld

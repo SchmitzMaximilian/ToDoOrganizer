@@ -7,9 +7,9 @@ import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf'
 import { Textdatenset } from '../Auslagerung/Datensets/Textdatenset'
 //import * as SecureStore from 'expo-secure-store'
 /*
-
+<KategorieSelect Index={1}/>
         
-        <KategorieSelect Index={1}/>
+        
 
 
 */
@@ -28,7 +28,12 @@ const Hinzufügen = (props) => {
         <Text style={{color:'#fff'}}>TESTTEST</Text>
         <Eingabefeld Labname={Textdatenset.Feldtexte.KAName}/>
         <Eingabefeld Labname={Textdatenset.Feldtexte.STP}/>
-        
+
+        <Text style={{color:'#fff'}}>Vorratslager</Text>
+        <Eingabefeld Labname={Textdatenset.Feldtexte.Bezeichnung}/>
+        <Eingabefeld Labname={Textdatenset.Feldtexte.Stand}/>
+        <Eingabefeld Labname={Textdatenset.Feldtexte.Minimum}/>
+
         </View>
         </View>
         </View>

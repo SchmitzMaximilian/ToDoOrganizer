@@ -11,6 +11,7 @@ const Vorratslager = (props) => {
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
+          <Text style={{color:'#fff'}}>WORK IN PROGRESS</Text>
         </View>
         </View>
         </View>
