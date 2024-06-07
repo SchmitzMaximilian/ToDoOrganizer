@@ -1,17 +1,19 @@
 import React from 'react'
+import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import { useContext, useEffect, useState } from 'react';
 import TitelTouch from '../TitelTouch'
-import Textdatenset from '../../Datensets/Textdatenset';
+import HülleKategorie from '../Rohbau/HülleKategorie';
 
 const Mittwoch = () => {
   const [tabmi,settabmi]=useState(false)
   return (
     <>
-    <TitelTouch show={tabmi} setshow={settabmi} T={Textdatenset.Wochentage.Mi} />
+    <TitelTouch show={tabmi} setshow={settabmi} T={"Mittwoch"} />
     {
       tabmi?
       <>
       <Text style={{color:'#fff'}}>Moin moin</Text>
+      <HülleKategorie/>
       </>
       :
       ""

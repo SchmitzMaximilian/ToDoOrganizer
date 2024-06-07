@@ -8,6 +8,7 @@ import Donnerstag from '../Auslagerung/Components/Wochentage/Donnerstag'
 import Freitag from '../Auslagerung/Components/Wochentage/Freitag'
 import Samstag from '../Auslagerung/Components/Wochentage/Samstag'
 import Sonntag from '../Auslagerung/Components/Wochentage/Sonntag'
+
 const ToDoListe = (props) => {
   return (
   <>
@@ -19,7 +20,7 @@ const ToDoListe = (props) => {
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
         <Text style={{color:'#fff'}}>hello</Text>
-        <Montag/>
+        <Montag/>        
         <Dienstag/>
         <Mittwoch/>
         <Donnerstag/>
@@ -64,9 +65,9 @@ const styles = StyleSheet.create({
     marginVertical:20,
     borderColor:'#64748b',
     borderWidth:1,
-    marginTop:50,
+    marginTop:30,
     alignSelf:'center',
-    paddingVertical:60,
+    paddingVertical:30,
   },
   placeholder:{
 

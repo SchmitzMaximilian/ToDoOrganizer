@@ -4,7 +4,8 @@ const Eingabefeld = (props) => {
   const[txtvalue,settxtvalue]=useState(''); 
   function textChangeHandler(t){
     settxtvalue(t) 
-    text = t; 
+    text = t;
+    props.storageValue(t) 
     }
     useEffect(()=>{
       

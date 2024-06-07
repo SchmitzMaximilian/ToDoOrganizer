@@ -39,9 +39,9 @@ const styles = StyleSheet.create({
     marginVertical:20,
     borderColor:'#64748b',
     borderWidth:1,
-    marginTop:50,
+    marginTop:30,
     alignSelf:'center',
-    paddingVertical:60,
+    paddingVertical:30,
   },
   placeholder:{
 

@@ -12,7 +12,10 @@ const Navknopf = ({navigation}) => {
       <Text style={{color:'#fff'}}>Vorratslager</Text>
     </TouchableOpacity>
     <TouchableOpacity onPress={()=>navigation.navigate({name:"Hinzufügen"})} style={styles.Basic}>
-      <Text style={{color:'#fff'}}>Hinzufügen</Text>
+      <Text style={{color:'#fff'}}>Neu Anlegen</Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={()=>navigation.navigate({name:"AddStichpunkt"})} style={styles.Basic}>
+      <Text style={{color:'#fff'}}>Bearbeiten</Text>
     </TouchableOpacity>
     </View></>
   )
@@ -36,7 +39,7 @@ const styles = StyleSheet.create({
     width:'25%',
     flex: 1,
     marginHorizontal:5,      
-    marginVertical: 30,      
+    marginVertical: 20,      
   },
   AdminButtonContainer:{
     width:'100%', 

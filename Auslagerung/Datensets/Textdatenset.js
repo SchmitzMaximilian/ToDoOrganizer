@@ -7,7 +7,7 @@ export const Textdatenset={
     "Minimum":"Mindestbestand",
     "repeat":"Regelmäßig",
     "STP":"Stichpunkt",
-    "":"",
+    "ID":"StorageKey",
     
   }
   ,

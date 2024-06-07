@@ -1,16 +1,18 @@
 import React from 'react'
 import { useContext, useEffect, useState } from 'react';
 import TitelTouch from '../TitelTouch'
-import Textdatenset from '../../Datensets/Textdatenset';
+import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
+import HülleKategorie from '../Rohbau/HülleKategorie';
 const Samstag = () => {
   const [tabsa,settabsa]=useState(false)
   return (
     <>
-    <TitelTouch show={tabsa} setshow={settabsa} T={Textdatenset.Wochentage.Sa} />
+    <TitelTouch show={tabsa} setshow={settabsa} T={"Samstag"} />
     {
       tabsa?
       <>
       <Text style={{color:'#fff'}}>Moin moin</Text>
+      <HülleKategorie/>
       </>
       :
       ""

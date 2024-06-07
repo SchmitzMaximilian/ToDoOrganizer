@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import ToDoListe from '../../Screens/ToDoListe';
 import Vorratslager from '../../Screens/Vorratslager';
 import Hinzufügen from '../../Screens/Hinzufügen';
+import AddStichpunkt from '../../Screens/AddStichpunkt';
 
 const Navbar = (props) => {
   const Stack = createStackNavigator();
@@ -13,6 +14,7 @@ const Navbar = (props) => {
     <Stack.Screen name = "ToDoListe"                   component = {ToDoListe}  />
     <Stack.Screen name = "Vorratslager"                  component = {Vorratslager} options={{headerShown:false}} /> 
     <Stack.Screen name = "Hinzufügen"                     component = {Hinzufügen} options={{headerShown:false}} />
+    <Stack.Screen name = "AddStichpunkt"                     component = {AddStichpunkt} options={{headerShown:false}} />
     </Stack.Navigator>
     </NavigationContainer>
   );
