@@ -1,33 +1,44 @@
 import React, { useEffect, useState } from 'react'
 import {TouchableOpacity, Text, StyleSheet} from 'react-native' 
+import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
+
+/*
+Lagerbestandwert + 1
+?wert aus anzeige feld Lagerbestand nehmen und +1 erhöhen dann updaten/neu abspeichern
+
+*/
+
 
 const Plus = (props) => {
-  const increase=()=>{
-    Lagerbestand.props.Z = Lagerbestand.props.Z + 1
+  const increase= async()=>{
+    try{
+      await ausgeben(JSON.parse([data]))
+    }
+    catch(err){
+      console.log(err)
+    }
+    let updatedata= data + 1
+    try{
+   await update(JSON.stringify(updatedata))
+    }catch(err){
+      console.log(err)
+    }
   }
   return (
     <>
     <TouchableOpacity onPress={()=>increase()} style={styles.Basic}>
-      <Text style={styles.Basic}>+</Text>
+      <Text style={{color:'#fff'}}>+</Text>
     </TouchableOpacity>
     </>
   )
 }
 const styles = StyleSheet.create({
   Basic:{
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
     alignItems: 'center',
-    backgroundColor: '#22c55e',
-    padding: 10,
-    height:'auto',    
-    borderRadius:5,
-    borderTopColor:'#1e3a8a',
-    borderTopWidth:2,
-    borderBottomColor:'#1e3a8a',
-    borderBottomWidth:2,
-    width:'25%',
-    marginHorizontal: '10%',      
-    marginVertical: 30,      
+    backgroundColor: '#0ea5e9',
+    padding: 9,
+    borderRadius:3 
   },
 
 })

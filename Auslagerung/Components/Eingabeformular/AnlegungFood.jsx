@@ -7,7 +7,7 @@ import { speichern,ausgeben,löschen,update} from '../../functions/Services/Secu
 const AnlegungFood = () => {
   const [Fooddaten,setFooddaten]=useState({Einkaufsliste:[]})
   const addFood= async(param)=>{
-  
+  await speichern(JSON.stringify([false,Fooddaten]))
   }
   return (
   <>

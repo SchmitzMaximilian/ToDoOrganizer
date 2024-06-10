@@ -12,7 +12,7 @@ const Dienstag = () => {
     {
       tabdi?
       <>
-      <Text style={{color:'#fff'}}>Moin moin</Text>
+      
       <HülleKategorie/>
       </>
       :

@@ -20,5 +20,15 @@ const Allgemein = (props) => {
     </>
   )
 }
+  
+  
+const styles = StyleSheet.create({
+  stpliste:{padding:5,
+    borderTopWidth:2,
+    borderTopColor:"black",
+    alignSelf:"stretch",
+    backgroundColor:"#d946ef"
+  }
 
+})
 export default Allgemein

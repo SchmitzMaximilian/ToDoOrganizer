@@ -4,8 +4,21 @@ import CheckboxStichpunkt from '../../functions/CheckboxStichpunkt';
 
 const Formulare = () => {
   return (
-    <div>Formulare</div>
+    <View style={styles.stpliste}>
+      <Text style={{color:"#fff"}}>mieep mieep</Text>
+      <Text style={{color:"#fff"}}>mieep mieep</Text>
+      <Text style={{color:"#fff"}}>mieep mieep</Text>
+    </View>
+    
   )
 }
+const styles = StyleSheet.create({
+  stpliste:{padding:5,
+    borderTopWidth:2,
+    borderTopColor:"black",
+    alignSelf:"stretch",
+    backgroundColor:"#d946ef"
+  }
 
+})
 export default Formulare

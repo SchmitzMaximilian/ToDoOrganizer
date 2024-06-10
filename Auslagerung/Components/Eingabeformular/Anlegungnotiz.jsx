@@ -9,24 +9,40 @@ import { speichern,ausgeben,löschen,update} from '../../functions/Services/Secu
   async function speichern(param){
   const data= await SecureStore.setItemAsync(param);
   return data;
-}
-  
-  
+}<SpeicherButton SDF={addNotiz}/>
+   
+    console.log('gespeichert')
+  kat=Kategorie(Keyvalue)
+  Notizdaten=Stichpunktname(Valuevalue)
+  Checkbox anfangsstatus ist false ?wie mit abspeichern?
 */
 const Anlegungnotiz = () => {
-  const [Notizdaten,setNotizdaten]=useState([])
-  const [kat,setkat]=useState()
-  const addNotiz= async()=>{
-    await speichern(kat,Notizdaten) 
-    console.log('gespeichert')
+  const [Katindex,setKatindex]=useState()
+
+  const selectKat= async()=>{
+    console.log(key)
+    await ausgeben(key)
+    setKatindex(key)
+  }
+
+
+  const addNotiz= async(Katindex)=>{
+    console.log(Katindex)
+    Katindex.push([])
+    await speichern(Katindex,JSON.stringify(false,Notizdaten))
 
   }
+
+
+  
+  
+
   return (
   <>
     <Text style={{color:'#fff'}}>Lege einen neuen Notizstichpunkt an</Text>
-    <KategorieSelect storageValue={setkat} Index={1}/>
-    <Eingabefeld storageValue={setNotizdaten} Labname={Textdatenset.Feldtexte.STP}/>
-    <SpeicherButton SDF={addNotiz}/>
+    <KategorieSelect storageValue={selectKat} Index={1}/>
+    <Eingabefeld storageValue={addNotiz} Labname={Textdatenset.Feldtexte.STP}/>
+    
   </>
   )
 }

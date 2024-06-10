@@ -21,7 +21,7 @@ const AddStichpunkt = (props) => {
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
-          
+        <Text style={{color:'#fff',alignSelf:"center",fontSize:24}}>Stichpunktupdatemenü WORK IN PROGRESS</Text>
         <Bearbeitungnotiz/>
 
         <BearbeitungFood/>

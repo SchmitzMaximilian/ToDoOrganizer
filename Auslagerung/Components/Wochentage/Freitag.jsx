@@ -11,7 +11,7 @@ const Freitag = () => {
     {
       tabfr?
       <>
-     <Text style={{color:'#fff'}}>Moin moin</Text>
+     
      <HülleKategorie/>
       </>
       :

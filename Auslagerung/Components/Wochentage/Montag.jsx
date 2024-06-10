@@ -13,7 +13,7 @@ const Montag = () => {
     {
       tabmo?
       <>
-      <Text style={{color:'#fff'}}>Moin moin</Text>
+      
       <HülleKategorie/>
       </>
       :

@@ -11,7 +11,7 @@ const Sonntag = () => {
     {
       tabso?
       <>
-      <Text style={{color:'#fff'}}>Moin moin</Text>
+      
       <HülleKategorie/>
       </>
       :

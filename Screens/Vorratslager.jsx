@@ -2,6 +2,7 @@ import React,{ useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-native'; 
 import { ScrollView } from 'react-native-gesture-handler';
 import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf';
+import Anzeigetestdummy from '../Auslagerung/Components/Rohbau/Anzeigetestdummy';
 const Vorratslager = (props) => {
   return (
     <>
@@ -10,8 +11,11 @@ const Vorratslager = (props) => {
       <ScrollView style={{backgroundColor: 'transparent'}}>
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
-        <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
-          <Text style={{color:'#fff'}}>WORK IN PROGRESS</Text>
+        <View style={{flexDirection:'column', width:'100%',paddingTop:10,flex:1}}>
+          <Text style={{color:'#fff',alignSelf:"center",fontSize:24}}>Vorratslager WORK IN PROGRESS</Text>
+          <Anzeigetestdummy/>
+          <Anzeigetestdummy/>
+          <Anzeigetestdummy/>
         </View>
         </View>
         </View>

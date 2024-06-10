@@ -11,7 +11,7 @@ const Samstag = () => {
     {
       tabsa?
       <>
-      <Text style={{color:'#fff'}}>Moin moin</Text>
+      
       <HülleKategorie/>
       </>
       :
