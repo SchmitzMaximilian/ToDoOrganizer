@@ -1,19 +1,34 @@
 import React, {  useEffect, useState } from "react";
 import {View, TextInput,StyleSheet } from 'react-native'
 import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
-const Eingabefeld = (props) => {
+
+/*
+switch(option){
+        case 1:
+          return arr[props.SI][1]=t
+        case 2:           
+          return arr[props.SI][2]=t
+        case 3:
+          return arr[props.SI][3]=t
+      }
+
+*/
+const EingabefeldFood = (props) => {
   const[txtvalue,settxtvalue]=useState(''); 
   
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
       text = t;
-console.log(props.SI)   
-    const data = await ausgeben(props.TK) 
-    console.log(JSON.parse(props.SI))
+      console.log("Erstes Feld " + props.SI)   
+    const data = await ausgeben(props.TK)
     if(data){
       let arr=JSON.parse(data)
-      arr[props.SI][1]=t
+
+      
+      arr[props.SI][props.option]=t
       console.log(arr)
+
+      
       try{
       const dataSave = await speichern(props.TK,JSON.stringify(arr))
       console.log("+++++++")
@@ -25,7 +40,6 @@ console.log(props.SI)
     } 
   }
     useEffect(()=>{
-      console.log(props)
       
      },[props])
   return (
@@ -57,4 +71,4 @@ const styles = StyleSheet.create({
   }
   
 });
-export default Eingabefeld
+export default EingabefeldFood

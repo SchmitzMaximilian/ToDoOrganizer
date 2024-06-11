@@ -1,8 +1,9 @@
 import * as SecureStore from 'expo-secure-store'
 
 export async function speichern(param,value){
-  const data= await SecureStore.setItemAsync(param,value);
-  return data;
+  await SecureStore.setItemAsync(param,value);
+  
+  return true;
 }
 export async function ausgeben(param){
   const data= await SecureStore.getItemAsync(param);
@@ -13,6 +14,6 @@ export async function löschen(param){
     return data;
 }
 export async function update(param,value){
-  const data= await SecureStore.setItemAsync(param,value);
-    return data;
+  await SecureStore.setItemAsync(param,value);
+    return true;
 }

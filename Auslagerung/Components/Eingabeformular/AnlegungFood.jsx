@@ -1,23 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
-import Eingabefeld from '../Rohbau/Eingabefeld'
+import EingabefeldFood from '../Eingabefelder/EingabefeldFood'
 import { Textdatenset } from '../../Datensets/Textdatenset'
 import SpeicherButton from '../Knöpfe/speicherknopf'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
+import EingabefeldBestand from '../Eingabefelder/EingabefeldBestand'
+import EingabefeldMinimum from '../Eingabefelder/EingabefeldMinimum'
+
+//addFood() bei useEffect?
+         // 
+//console.log()
 const AnlegungFood = () => {
-  const [Fooddaten,setFooddaten]=useState({Einkaufsliste:[]})
-  const addFood= async(param)=>{
-  await speichern(JSON.stringify([false,Fooddaten]))
+    const [selectIndex,setselectIndex]=useState(0)
+  const addFood= async()=>{
+    let name = "Einkaufsliste"
+    const data = await ausgeben(name)
+    console.log(data)
+     let index =JSON.parse(data).length
+     setselectIndex(index)
+     let ekarr=JSON.parse(data)
+     ekarr.push([false,"","",""]);
+   const EinkaufSpeichern =await speichern(name,JSON.stringify(ekarr))
   }
+  useEffect(()=>{
+    selectIndex==0?addFood():""
+  },[selectIndex])
   return (
   <>
   <Text style={{color:'#fff'}}>Füge dem Vorratslager / der Einkaufsliste einen neuen Artikel hinzu</Text>
-          <Eingabefeld storageValue={setFooddaten} Labname={Textdatenset.Feldtexte.Bezeichnung}/>
-          <Eingabefeld storageValue={setFooddaten} Labname={Textdatenset.Feldtexte.Stand}/>
-          <Eingabefeld storageValue={setFooddaten} Labname={Textdatenset.Feldtexte.Minimum}/>
-          <SpeicherButton SDF={addFood}/>
+          <EingabefeldFood    option={1} TK={"Einkaufsliste"} SI={selectIndex} Labname={Textdatenset.Feldtexte.Bezeichnung}/>
+          <EingabefeldBestand option={2} TK={"Einkaufsliste"} SI={selectIndex} Labname={Textdatenset.Feldtexte.Stand}/>
+          <EingabefeldMinimum option={3} TK={"Einkaufsliste"} SI={selectIndex} Labname={Textdatenset.Feldtexte.Minimum}/>
   </>
   )
 }
-
+// Für eingabe feld switch case des labnamen um array leerstellen befüllung festzulegen
 export default AnlegungFood

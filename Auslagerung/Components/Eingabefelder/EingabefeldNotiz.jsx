@@ -1,42 +1,53 @@
 import React, {  useEffect, useState } from "react";
 import {View, TextInput,StyleSheet } from 'react-native'
 import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
-const Eingabefeld = (props) => {
-  const[txtvalue,settxtvalue]=useState(''); 
+const EingabefeldNotiz = (props) => {
+  const[txtvalue,settxtvalue]=useState('');
+  const [erfolg,seterfolg]=useState(0) 
   
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
       text = t;
-console.log(props.SI)   
-    const data = await ausgeben(props.TK) 
-    console.log(JSON.parse(props.SI))
-    if(data){
+      console.log(props.SI)
+
+      const data = await ausgeben(props.TK) 
+      console.log(JSON.parse(props.SI))
+
+      if(data){
       let arr=JSON.parse(data)
       arr[props.SI][1]=t
       console.log(arr)
       try{
+
       const dataSave = await speichern(props.TK,JSON.stringify(arr))
+      
       console.log("+++++++")
       console.log(dataSave)
+      if(dataSave==true){
+        seterfolg(1)
+        setTimeout(()=>{seterfolg(0)},1000)
+   
+
+      }
       }catch(err){
         console.log(err)
       }
       
-    } 
+      } 
   }
     useEffect(()=>{
       console.log(props)
-      
+      settxtvalue('')
      },[props])
   return (
     <View >
-      <TextInput style={styles.inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue} placeholder={props.Labname} placeholderTextColor={'#f1f5f9'}>        
+      <TextInput style={styles(erfolg).inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue} placeholder={props.Labname} placeholderTextColor={'#f1f5f9'}>        
       </TextInput>
     </View>
   )
 }
 
-const styles = StyleSheet.create({
+const styles = (erfolg)=>StyleSheet.create({
   inputsanity:{
     color: '#FFF',
     fontSize:16,
@@ -53,8 +64,8 @@ const styles = StyleSheet.create({
     marginVertical:15,
     
     zIndex:10,
-    backgroundColor: '#6b728090'
+    backgroundColor: erfolg==0?'#6b728090':'#047857'
   }
   
 });
-export default Eingabefeld
+export default EingabefeldNotiz
