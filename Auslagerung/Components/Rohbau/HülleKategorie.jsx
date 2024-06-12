@@ -14,7 +14,7 @@ const HülleKategorie = (props) => {
   <View style={styles.thema}>
     <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Allgemein</Text>
-  
+  <Allgemein  />
   </View><View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Hausarbeiten</Text> 
    <Hausarbeit     />
@@ -46,7 +46,7 @@ const HülleKategorie = (props) => {
   </View>
     {/*
     
-    <Allgemein  />
+    
     <Sonstiges />
     <Geburtstage      Index={5} />
     <Formulare        Index={6} />

@@ -8,7 +8,7 @@ import { speichern,ausgeben,löschen,update} from './Auslagerung/functions/Servi
 //setersteeinkaufabfrage=false
 /**
 
-await löschen('ersteabfrage')
+    await löschen('ersteabfrage')
     await löschen('Allgemein')
     await löschen('Formulare')
     await löschen('Geburtstage')

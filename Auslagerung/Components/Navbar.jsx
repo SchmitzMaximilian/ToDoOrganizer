@@ -5,6 +5,7 @@ import ToDoListe from '../../Screens/ToDoListe';
 import Vorratslager from '../../Screens/Vorratslager';
 import Hinzufügen from '../../Screens/Hinzufügen';
 import AddStichpunkt from '../../Screens/AddStichpunkt';
+import UpdateSeite from '../../Screens/UpdateSeite';
 
 const Navbar = (props) => {
   const Stack = createStackNavigator();
@@ -15,6 +16,7 @@ const Navbar = (props) => {
     <Stack.Screen name = "Vorratslager"                  component = {Vorratslager} options={{headerShown:false}} /> 
     <Stack.Screen name = "Hinzufügen"                     component = {Hinzufügen} options={{headerShown:false}} />
     <Stack.Screen name = "AddStichpunkt"                     component = {AddStichpunkt} options={{headerShown:false}} />
+    <Stack.Screen name = "UpdateSeite"                     component = {UpdateSeite} options={{headerShown:false}} />
     </Stack.Navigator>
     </NavigationContainer>
   );

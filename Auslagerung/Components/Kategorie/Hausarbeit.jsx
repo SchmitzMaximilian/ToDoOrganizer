@@ -1,15 +1,36 @@
 import React,{ useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-native';
 import CheckboxStichpunkt from '../../functions/CheckboxStichpunkt';
+import { ausgeben } from '../../functions/Services/SecureStorage/functionhandler';
 const Hausarbeit = () => {
+  const [inhalt,setinhalt]=useState([])
+  const name = "Hausarbeiten"
+  console.log(inhalt)
+  const lesen = async()=>{    
+    const data = await ausgeben(name)
+    if(data){
+      setinhalt(JSON.parse(data))
+      console.log(data)
+    }
+    
+  }
+  useEffect(()=>{
+  lesen()
+  },[])
   return (
+    <>
     
-    <View style={styles.stpliste}>
-      <Text style={{color:"#fff"}}>mieep mieep</Text>
-      <Text style={{color:"#fff"}}>mieep mieep</Text>
-      <Text style={{color:"#fff"}}>mieep mieep</Text>
+      {inhalt.length>0?
+      <View style={styles.stpliste}>
+      {inhalt.length>0&&inhalt.map((item,index)=>(
+      <CheckboxStichpunkt Key={item+index} OBJN={name} endArray={inhalt} Item={item} Index={index}/>
+    ))}  
+    
     </View>
-    
+      :
+      ""
+    }
+    </>
   )
 }
 const styles = StyleSheet.create({

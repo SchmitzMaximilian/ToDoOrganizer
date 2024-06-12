@@ -2,15 +2,13 @@ import React, { useState } from 'react'
 import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import {ScrollView } from 'react-native-gesture-handler'
 import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf'
-import AuswahlBearbeitung from '../Auslagerung/Components/Knöpfe/AuswahlBearbeitung'
-import Anlegungnotiz from '../Auslagerung/Components/Eingabeformular/Anlegungnotiz'
-import AnlegungFood from '../Auslagerung/Components/Eingabeformular/AnlegungFood'
 /*
+,route nach props maybe 
+
+route.params.INHALT
 
 */
-const Hinzufügen = (props) => {
-  const [stshow,setstshow]=useState(false)
-  const [lmshow,setlmshow]=useState(false)
+const UpdateSeite = (props) => {
   return (
     <>
     <SafeAreaView style={styles.sav}>    
@@ -19,30 +17,12 @@ const Hinzufügen = (props) => {
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
-        <Text style={{color:'#fff',alignSelf:"center",fontSize:24}}>Stichpunkterzeugung WORK IN PROGRESS</Text>
-          <AuswahlBearbeitung KS={setstshow} VL={setlmshow} />
-        {
-          stshow?
-          <>
-          <Anlegungnotiz/>
-          </>
-        :
-        ""
-        }
-        {
-          lmshow?
-          <>
-          <AnlegungFood/>
-          </>
-          :
-          ""
-        }
         </View>
         </View>
         </View>
       </ScrollView>      
     </SafeAreaView>
-  </>
+    </>
   )
 }
 const styles = StyleSheet.create({
@@ -56,7 +36,16 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     backgroundColor: '#00000099',
   },
-  
+  container: {    
+    flexGrow:1,
+    flexDirection:'column',
+    flex: 1,
+    
+    width:'100%',   
+    height:'100%',  
+    alignItems: 'center',
+    justifyContent:'flex-start',
+  },
   ContainerFragebogen:{
     width:'90%', 
     backgroundColor: '#00000099',  
@@ -73,4 +62,4 @@ const styles = StyleSheet.create({
 
   },
 })
-export default Hinzufügen
+export default UpdateSeite
