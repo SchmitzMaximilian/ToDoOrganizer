@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react'
 import {TouchableOpacity, Text, StyleSheet} from 'react-native' 
 
 const Minus = (props) => {
-  const increase=()=>{
-    Lagerbestand.props.Z = Lagerbestand.props.Z - 1
+  const decrease=(props)=>{
+    if(props.Zahl>0){
+      let newZahl = (props.Zahl - 1)
+      console.log(newZahl)
+
+    }else{
+      
+    }
   }
   return (
     <>
-    <TouchableOpacity onPress={()=>increase()} style={styles.Basic}>
+    <TouchableOpacity onPress={()=>decrease(props)} style={styles.Basic}>
       <Text style={{color:'#fff'}}>-</Text>
     </TouchableOpacity>
     </>

@@ -14,16 +14,19 @@ import STPListe from '../Bearbeitung/STPListe'
 
 <EingabeAuswahlDatenset Labname={Textdatenset.Feldtexte.ID}/>
         
-        <EingabeUpdate Labname={Textdatenset.Feldtexte.STP}/>
+        
 
 */
 
 
 const Bearbeitungnotiz = (props) => {
   const [THEMA,setTHEMA]=useState([])
-  const [Arrayname,setArrayname]=useState()
+  const [Arrayname,setArrayname]=useState("Kategorie Auswählen")
+  const [ThemaIndex,setThemaIndex]=useState(0)
   const auswahlAnzeige= async(key)=>{
     let name
+    setThemaIndex(key)
+    if(key>0){
     switch(key){
     case 1: 
      name= "Allgemein"
@@ -50,23 +53,28 @@ const Bearbeitungnotiz = (props) => {
       name= "Einkaufsliste"
       break;
      default:
-       name= "null"
+       name= "Kategorie Auswählen"
        break;
     } 
     const data = await ausgeben(name)
     setArrayname(name)
     setTHEMA(JSON.parse(data))
+  }else if(key==0){
+  setArrayname("Kategorie Auswählen")
+  setTHEMA([])
+}else{
+  setArrayname(Arrayname)
+}
   }
 
   useEffect(()=>{
-    
-  },[THEMA])
+  },[])
   return (<>
-    <NBS storageValue={auswahlAnzeige} Index={2}/>
+    <NBS storageValue={auswahlAnzeige} Auswahl={0} Index={2}/>
     {
       THEMA?.length>0?
       <>
-      <STPListe Arr={THEMA} navigation={props.navigation} function={auswahlAnzeige} Arrayname={Arrayname}/>
+      <STPListe Arr={THEMA} navigation={props.navigation} function={auswahlAnzeige} TI={ThemaIndex} Arrayname={Arrayname}/>
       </>
       :
       ""

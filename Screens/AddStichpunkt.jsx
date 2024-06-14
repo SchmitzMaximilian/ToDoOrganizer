@@ -1,15 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import {ScrollView } from 'react-native-gesture-handler'
-import Eingabefeld from '../Auslagerung/Components/Rohbau/Eingabefeld'
-import KategorieSelect from '../Auslagerung/Components/Auswahlpicker/KategorieSelect'
 import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf'
-import { Textdatenset } from '../Auslagerung/Datensets/Textdatenset'
-import { speichern,ausgeben,löschen,update} from '../Auslagerung/functions/Services/SecureStorage/functionhandler'
 import Bearbeitungnotiz from '../Auslagerung/Components/Eingabeformular/Bearbeitungnotiz'
-import BearbeitungFood from '../Auslagerung/Components/Eingabeformular/BearbeitungFood'
 //import * as SecureStore from 'expo-secure-store'
 const AddStichpunkt = (props) => {
+  useEffect(()=>{
+
+  },[])
   return (
     <>
     <SafeAreaView style={styles.sav}>    

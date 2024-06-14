@@ -3,10 +3,11 @@ import React,  {useContext, useEffect, useState }from 'react'
 import {StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import {Selectdatenset} from '../../Datensets/Selectdatenset'
 const NBS = (props) => {
-  const [SelectedLanguage, setSelectedLanguage] = useState(0);
+  const [SelectedLanguage, setSelectedLanguage] = useState(props.Auswahl);
   const selectionHandler=(itemValue)=>{
     setSelectedLanguage(itemValue)
     props.storageValue(itemValue)
+
   }
   useEffect(()=>{ 
     

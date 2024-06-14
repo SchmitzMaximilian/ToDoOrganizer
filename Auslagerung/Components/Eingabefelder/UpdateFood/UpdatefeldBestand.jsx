@@ -1,6 +1,6 @@
 import React, {  useEffect, useState } from "react";
 import {View, TextInput,StyleSheet } from 'react-native'
-import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
+import { ausgeben, speichern } from "../../../functions/Services/SecureStorage/functionhandler";
 
 /*
 switch(option){
@@ -13,13 +13,13 @@ switch(option){
       }
 
 */
-const EingabefeldMinimum = (props) => {
-  const[txtvalue,settxtvalue]=useState(''); 
+const UpdatefeldBestand = (props) => {
+  const[txtvalue,settxtvalue]=useState(props.Labname); 
   
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
       text = t;
-      console.log(props.SI)   
+      console.log("Zweites Feld " + props.SI)   
     const data = await ausgeben(props.TK)
     if(data){
       let arr=JSON.parse(data)
@@ -44,7 +44,7 @@ const EingabefeldMinimum = (props) => {
      },[props])
   return (
     <View >
-      <TextInput style={styles.inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue} placeholder={props.Labname} placeholderTextColor={'#f1f5f9'}>        
+      <TextInput style={styles.inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue} placeholderTextColor={'#f1f5f9'}>        
       </TextInput>
     </View>
   )
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
   }
   
 });
-export default EingabefeldMinimum
+export default UpdatefeldBestand

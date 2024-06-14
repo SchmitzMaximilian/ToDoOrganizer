@@ -1,19 +1,38 @@
 import React, {  useEffect, useState } from "react";
 import {View, TextInput,StyleSheet } from 'react-native'
-import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
-const EingabeUpdate = (props) => {
-  const[txtvalue,settxtvalue]=useState(props.Labname); 
+import { ausgeben, speichern } from "../../../functions/Services/SecureStorage/functionhandler";
+
+/*
+switch(option){
+        case 1:
+          return arr[props.SI][1]=t
+        case 2:           
+          return arr[props.SI][2]=t
+        case 3:
+          return arr[props.SI][3]=t
+      }
+
+*/
+const EingabefeldBestand = (props) => {
+  const[txtvalue,settxtvalue]=useState(''); 
   
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
-      text = t;   
-    const data = await ausgeben(props.TK) 
-    console.log(JSON.parse(props.SI))
+      text = t;
+      console.log("Zweites Feld " + props.SI)   
+    const data = await ausgeben(props.TK)
     if(data){
       let arr=JSON.parse(data)
-      arr[props.SI][1]=t
+
+      
+      arr[props.SI][props.option]=t
+      console.log(arr)
+
+      
       try{
       const dataSave = await speichern(props.TK,JSON.stringify(arr))
+      console.log("+++++++")
+      console.log(dataSave)
       }catch(err){
         console.log(err)
       }
@@ -21,12 +40,11 @@ const EingabeUpdate = (props) => {
     } 
   }
     useEffect(()=>{
-      console.log(props)
       
      },[props])
   return (
     <View >
-      <TextInput style={styles.inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue}  placeholderTextColor={'#f1f5f9'}>        
+      <TextInput style={styles.inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue} placeholder={props.Labname} placeholderTextColor={'#f1f5f9'}>        
       </TextInput>
     </View>
   )
@@ -53,4 +71,4 @@ const styles = StyleSheet.create({
   }
   
 });
-export default EingabeUpdate
+export default EingabefeldBestand

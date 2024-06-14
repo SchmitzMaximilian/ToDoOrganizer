@@ -4,18 +4,20 @@ import {Octicons,Ionicons} from '@expo/vector-icons';
 import { löschen, update } from '../../functions/Services/SecureStorage/functionhandler';
 
 const STPListe = (props) => {
-  console.log(props)
-  const Array = props.Arr
+  
 
-  const auswahlSTP=()=>{
-    props.navigation.navigate({name:"UpdateSeite",param:{INHALT: Array}})
+  const auswahlSTP=(item,index)=>{
+    if(props.Arrayname=="Einkaufsliste"){
+      props.navigation.navigate({name:"UpdateSeiteEinkauf",params:{inhalt: item,Thema: props.Arrayname, position: index}})
+    }else{
+      props.navigation.navigate({name:"UpdateSeite",params:{inhalt: item,Thema: props.Arrayname, position: index}})
+    }
+    
   }
   const vernichten= async(index)=>{
-    Array.splice(index,1)
-    console.log("snipped")
-    console.log(Array)
-    await update(props.Arrayname,JSON.stringify(Array))
-    props.function(props.Arrayname)
+    props.Arr.splice(index,1)
+    await update(props.Arrayname,JSON.stringify(props.Arr))
+    props.function(props.TI)
   }
 
   useEffect(()=>{
@@ -27,8 +29,8 @@ const STPListe = (props) => {
       props.Arr?.length>0?
       <>
       {
-        Array.map((item,index)=>(
-          <TouchableOpacity key={'Stichpunkt'+index} onPress={()=>auswahlSTP()}>
+        props.Arr.map((item,index)=>(
+          <TouchableOpacity key={'Stichpunkt'+index} onPress={()=>auswahlSTP(item,index)}>
             <View key={'user'+item+index} style={styles.User}>
             <Text style={styles.TextElemente}>{item[1]}</Text><TouchableOpacity onPress={()=>vernichten(index)}><Octicons style={styles.delete} name={'x-circle'} size={25}  color={'red'} /></TouchableOpacity>
             </View>

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
-import EingabefeldFood from '../Eingabefelder/EingabefeldFood'
+import EingabefeldFood from '../Eingabefelder/EingabeFood/EingabefeldFood'
 import { Textdatenset } from '../../Datensets/Textdatenset'
 import SpeicherButton from '../Knöpfe/speicherknopf'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
-import EingabefeldBestand from '../Eingabefelder/EingabefeldBestand'
-import EingabefeldMinimum from '../Eingabefelder/EingabefeldMinimum'
+import EingabefeldBestand from '../Eingabefelder/EingabeFood/EingabefeldBestand'
+import EingabefeldMinimum from '../Eingabefelder/EingabeFood/EingabefeldMinimum'
 
 //addFood() bei useEffect?
          // 

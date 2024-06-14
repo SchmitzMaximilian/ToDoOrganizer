@@ -35,6 +35,7 @@ export default function App() {
       const data7=await speichern("Sonstiges",JSON.stringify([]))
       const data8=await speichern("Termine",JSON.stringify([]))
       const data9=await speichern("Einkaufsliste",JSON.stringify([]))
+      
       if((data1)&&(data2)&&(data3)&&(data4)&&(data5)&&(data6)&&(data7)&&(data8)&&(data9)){
         console.log('ok')
       }

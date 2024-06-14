@@ -8,39 +8,41 @@ import Sonstiges from '../Kategorie/Sonstiges';
 import Formulare from '../Kategorie/Formulare';
 import Reisecheckliste from '../Kategorie/Reisecheckliste';
 import Geburtstage from '../Kategorie/Geburtstage';
+import Einkaufsliste from '../Kategorie/Einkaufsliste';
 const HülleKategorie = (props) => {
   return (
   <>  
   <View style={styles.thema}>
     <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Allgemein</Text>
-  <Allgemein  />
+  <Allgemein id={1} />
   </View><View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Hausarbeiten</Text> 
-   <Hausarbeit     />
+   <Hausarbeit  id={1}   />
   </View>
   <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Einkaufsliste</Text>
+  <Einkaufsliste id={1}/>
   </View>
   <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Termine</Text>
-  <Termine />
+  <Termine id={1}/>
   </View>
   <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Geburtstage</Text>
-  <Geburtstage />
+  <Geburtstage id={1}/>
   </View>
   <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Reisecheckliste</Text>
-  <Reisecheckliste />
+  <Reisecheckliste id={1}/>
   </View>
   <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Formulare</Text>
-  <Formulare />
+  <Formulare id={1}/>
   </View>
   <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Sonstiges</Text>
-  <Sonstiges />
+  <Sonstiges id={1}/>
   </View>
 
   </View>

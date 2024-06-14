@@ -28,6 +28,7 @@ const Anlegungnotiz = () => {
     console.log("#################  Neuer Log ##########################")
     console.log(key)
     let name
+    if(key>0){
     switch(key){
     case 1: 
      name= "Allgemein"
@@ -70,7 +71,9 @@ const Anlegungnotiz = () => {
    darr.push([false,""]);
    const dataSpeichern = await speichern(name,JSON.stringify(darr))
    console.log("Problem")
-   console.log(dataSpeichern)
+   console.log(dataSpeichern)}else{
+    
+   }
   }
 
   

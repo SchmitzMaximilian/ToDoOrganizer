@@ -1,6 +1,6 @@
 import React, {  useEffect, useState } from "react";
 import {View, TextInput,StyleSheet } from 'react-native'
-import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
+import { ausgeben, speichern } from "../../../functions/Services/SecureStorage/functionhandler";
 
 /*
 switch(option){
@@ -13,8 +13,8 @@ switch(option){
       }
 
 */
-const EingabefeldFood = (props) => {
-  const[txtvalue,settxtvalue]=useState(''); 
+const UpdatefeldFood = (props) => {
+  const[txtvalue,settxtvalue]=useState(props.Labname); 
   
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
@@ -44,7 +44,7 @@ const EingabefeldFood = (props) => {
      },[props])
   return (
     <View >
-      <TextInput style={styles.inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue} placeholder={props.Labname} placeholderTextColor={'#f1f5f9'}>        
+      <TextInput style={styles.inputsanity} onChangeText={text=>STPerstellen(text)} value={txtvalue}  placeholderTextColor={'#f1f5f9'}>        
       </TextInput>
     </View>
   )
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
   }
   
 });
-export default EingabefeldFood
+export default UpdatefeldFood

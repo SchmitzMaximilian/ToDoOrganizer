@@ -1,6 +1,6 @@
 import React, {  useEffect, useState } from "react";
 import {View, TextInput,StyleSheet } from 'react-native'
-import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
+import { ausgeben, speichern } from "../../../functions/Services/SecureStorage/functionhandler";
 
 /*
 switch(option){
@@ -13,13 +13,13 @@ switch(option){
       }
 
 */
-const EingabefeldBestand = (props) => {
+const EingabefeldMinimum = (props) => {
   const[txtvalue,settxtvalue]=useState(''); 
   
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
       text = t;
-      console.log("Zweites Feld " + props.SI)   
+      console.log(props.SI)   
     const data = await ausgeben(props.TK)
     if(data){
       let arr=JSON.parse(data)
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
   }
   
 });
-export default EingabefeldBestand
+export default EingabefeldMinimum
