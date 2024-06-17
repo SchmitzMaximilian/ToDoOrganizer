@@ -7,6 +7,7 @@ import Hinzufügen from '../../Screens/Hinzufügen';
 import AddStichpunkt from '../../Screens/AddStichpunkt';
 import UpdateSeite from '../../Screens/UpdateSeite';
 import UpdateSeiteEinkauf from '../../Screens/UpdateSeiteEinkauf';
+import Einkauf from '../../Screens/Einkauf';
 
 const Navbar = (props) => {
   const Stack = createStackNavigator();
@@ -14,7 +15,8 @@ const Navbar = (props) => {
     <NavigationContainer >
     <Stack.Navigator initialRouteName="ToDoListe" screenOptions={{headerShown:false, headerMode:'screen', headerTintColor:'white', headerStyle: {backgroundColor:'rgba(0,15,40,0.95)'}}}>
     <Stack.Screen name = "ToDoListe"                   component = {ToDoListe}  />
-    <Stack.Screen name = "Vorratslager"                component = {Vorratslager} options={{headerShown:false}} /> 
+    <Stack.Screen name = "Vorratslager"                component = {Vorratslager} options={{headerShown:false}} />
+    <Stack.Screen name = "Einkauf"                     component = {Einkauf} options={{headerShown:false}} /> 
     <Stack.Screen name = "Hinzufügen"                  component = {Hinzufügen} options={{headerShown:false}} />
     <Stack.Screen name = "AddStichpunkt"               component = {AddStichpunkt} options={{headerShown:false}} />
     <Stack.Screen name = "UpdateSeiteEinkauf"          component = {UpdateSeiteEinkauf} options={{headerShown:false}} />

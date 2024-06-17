@@ -1,7 +1,7 @@
 import React,{ useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-native'; 
 import { ScrollView } from 'react-native-gesture-handler';
-import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf';
+import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf';
 import Anzeigefeld from '../Auslagerung/Components/Rohbau/Anzeigefeld';
 const Vorratslager = (props) => {
   return (

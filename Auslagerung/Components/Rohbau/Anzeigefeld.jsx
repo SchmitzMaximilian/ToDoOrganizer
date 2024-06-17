@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import {View, Text,StyleSheet } from 'react-native'
-import Plus from '../Knöpfe/Plus'
-import Minus from '../Knöpfe/Minus'
+import Plus from '../Knoepfe/Plus'
+import Minus from '../Knoepfe/Minus'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 //Secure storage einfügen und beim mapping einbinden anstatt datenset
 const Anzeigefeld = (props) => {
   const [LagerArray,setLagerArray]=useState([])
+  console.log("möp")
 
   const abruf=async()=>{
     const data = await ausgeben("Einkaufsliste")
@@ -13,6 +14,7 @@ const Anzeigefeld = (props) => {
   }
   useEffect(()=>{
     abruf()
+     
   },[])
   return (
     <>
@@ -20,12 +22,12 @@ const Anzeigefeld = (props) => {
       LagerArray?.length>0?    
     <>
     {LagerArray.length>0&&LagerArray.map((item,index)=>(
-      <View style={styles.listerow}>
+      <View key={item[1]} style={styles.listerow}>
       <Text style={styles.inputsanity}>{item[1]}</Text>
       <Text style={styles.inputsanity}>{item[3]}</Text>
-      <Plus Zahl={item[2]}/>      
+      <Plus id={index} Zahl={item[2]} refresh={setLagerArray}/>      
       <Text style={styles.inputsanity}>{item[2]}</Text>
-      <Minus Zahl={item[2]}/>
+      <Minus id={index} Zahl={item[2]} refresh={setLagerArray}/>
       </View>
       ))
     

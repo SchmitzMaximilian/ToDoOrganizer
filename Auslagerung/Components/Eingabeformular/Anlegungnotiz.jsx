@@ -3,7 +3,6 @@ import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import { Textdatenset } from '../../Datensets/Textdatenset'
 import EingabefeldNotiz from '../Eingabefelder/EingabefeldNotiz'
 import KategorieSelect from '../Auswahlpicker/KategorieSelect'
-import SpeicherButton from '../Knöpfe/speicherknopf'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 /*
   const testschreiben=async(key)=>{

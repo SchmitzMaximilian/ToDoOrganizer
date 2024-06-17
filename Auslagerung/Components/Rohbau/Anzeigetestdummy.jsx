@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text,StyleSheet } from 'react-native'
-import Plus from '../Knöpfe/Plus'
-import Minus from '../Knöpfe/Minus'
+import Plus from '../Knoepfe/Plus'
+import Minus from '../Knoepfe/Minus'
 const Anzeigetestdummy = () => {
   return (
     <>

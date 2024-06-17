@@ -1,7 +1,6 @@
 import React,{ useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-native'; 
 import Hausarbeit from '../Kategorie/Hausarbeit';
-import KategorieSelect from '../Auswahlpicker/KategorieSelect';
 import Allgemein from '../Kategorie/Allgemein';
 import Termine from '../Kategorie/Termine';
 import Sonstiges from '../Kategorie/Sonstiges';
@@ -9,7 +8,15 @@ import Formulare from '../Kategorie/Formulare';
 import Reisecheckliste from '../Kategorie/Reisecheckliste';
 import Geburtstage from '../Kategorie/Geburtstage';
 import Einkaufsliste from '../Kategorie/Einkaufsliste';
-const HülleKategorie = (props) => {
+
+/*
+<View style={styles.Kat}>
+  <Text style={{color:'#fff'}}>Einkaufsliste</Text>
+  <Einkaufsliste id={1}/>
+  </View>
+
+*/
+const HülleKategorie = () => {
   return (
   <>  
   <View style={styles.thema}>
@@ -20,10 +27,7 @@ const HülleKategorie = (props) => {
   <Text style={{color:'#fff'}}>Hausarbeiten</Text> 
    <Hausarbeit  id={1}   />
   </View>
-  <View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Einkaufsliste</Text>
-  <Einkaufsliste id={1}/>
-  </View>
+  
   <View style={styles.Kat}>
   <Text style={{color:'#fff'}}>Termine</Text>
   <Termine id={1}/>
@@ -46,13 +50,7 @@ const HülleKategorie = (props) => {
   </View>
 
   </View>
-    {/*
-    
-    
-    <Sonstiges />
-    <Geburtstage      Index={5} />
-    <Formulare        Index={6} />
-  <Reisecheckliste  Index={7} />*/}</>
+    </>
   )
 }
 const styles = StyleSheet.create({

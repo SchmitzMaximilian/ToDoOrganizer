@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import {ScrollView } from 'react-native-gesture-handler'
-import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf'
-import AuswahlBearbeitung from '../Auslagerung/Components/Knöpfe/AuswahlBearbeitung'
+import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
+import AuswahlBearbeitung from '../Auslagerung/Components/Knoepfe/AuswahlBearbeitung'
 import Anlegungnotiz from '../Auslagerung/Components/Eingabeformular/Anlegungnotiz'
 import AnlegungFood from '../Auslagerung/Components/Eingabeformular/AnlegungFood'
 /*

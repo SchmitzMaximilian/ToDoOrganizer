@@ -1,13 +1,6 @@
 import React, { useState,useEffect } from 'react'
-import KategorieSelect from '../Auswahlpicker/KategorieSelect'
-import { Text } from 'react-native'
-import Eingabefeld from '../Rohbau/Eingabefeld'
-import { Textdatenset } from '../../Datensets/Textdatenset'
-import SpeicherButton from '../Knöpfe/speicherknopf'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 import NBS from '../Auswahlpicker/NotizBearbeitungSelect'
-import EingabeAuswahlDatenset from '../Eingabefelder/EingabeAuswahlDatenset'
-import EingabeUpdate from '../Eingabefelder/EingabeUpdate'
 import STPListe from '../Bearbeitung/STPListe'
 
 /*

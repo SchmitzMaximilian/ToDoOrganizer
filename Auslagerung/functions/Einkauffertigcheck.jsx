@@ -6,21 +6,20 @@ import { speichern, update } from './Services/SecureStorage/functionhandler';
 /*
 
 */
-export default function CheckboxStichpunkt(props) {
-  const [erledigt, seterledigt] = useState(props.Item[0])
+export default function Einkauffertigcheck(props) {
+  const [erledigt, seterledigt] = useState(false)
   const clickhandler=async(itemValue)=>{
     seterledigt(itemValue)
-    
-      let arr= props.endArray
-      arr[props.Index][0]=itemValue
-      
-      try{
-        console.log("I tried")
-        const newArr= await speichern(props.OBJN,JSON.stringify(arr))
-      }catch(err){
-        console.log(err)
-      }
-      
+    let arr= [...props.endArray]
+    arr.forEach(element=>element[0]=false)
+    console.log(arr)
+    try{
+      await speichern("Einkaufsliste",JSON.stringify(arr))
+      props.refresh(arr)
+      console.log("did it")
+    }catch(err){
+      console.log(err)
+    }
     
     
   }
@@ -30,7 +29,7 @@ export default function CheckboxStichpunkt(props) {
       value={erledigt?true:false}
       onValueChange={(itemValue) =>clickhandler(itemValue) }
       style={styles.checkbox}
-      /><Text style={styles.beschreibung}>{props.Item[1]}</Text>
+      /><Text style={styles.beschreibung}>Einkauf abgeschlossen</Text>
       </View >         
         
         

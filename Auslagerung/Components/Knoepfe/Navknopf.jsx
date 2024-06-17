@@ -8,6 +8,9 @@ const Navknopf = ({navigation}) => {
     <TouchableOpacity onPress={()=>navigation.navigate({name:"ToDoListe"})} style={styles.Basic}>
       <Text style={{color:'#fff'}}>ToDoListe</Text>
     </TouchableOpacity>
+    <TouchableOpacity onPress={()=>navigation.navigate({name:"Einkauf"})} style={styles.Basic}>
+      <Text style={{color:'#fff'}}>Einkauf</Text>
+    </TouchableOpacity>
     <TouchableOpacity onPress={()=>navigation.navigate({name:"Vorratslager"})} style={styles.Basic}>
       <Text style={{color:'#fff'}}>Vorratslager</Text>
     </TouchableOpacity>

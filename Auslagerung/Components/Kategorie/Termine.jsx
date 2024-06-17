@@ -23,7 +23,7 @@ const Termine = () => {
       {inhalt.length>0?
       <View style={styles.stpliste}>
       {inhalt.length>0&&inhalt.map((item,index)=>(
-      <CheckboxStichpunkt Key={item+index} OBJN={name} endArray={inhalt} Item={item} Index={index}/>
+      <CheckboxStichpunkt key={item+index} OBJN={name} endArray={inhalt} Item={item} Index={index}/>
     ))}  
     
     </View>

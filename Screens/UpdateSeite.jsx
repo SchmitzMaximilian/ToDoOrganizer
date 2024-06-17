@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import {ScrollView } from 'react-native-gesture-handler'
-import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf'
+import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
 import EingabeUpdate from '../Auslagerung/Components/Eingabefelder/EingabeUpdate'
-import GoBackknopf from '../Auslagerung/Components/Knöpfe/GoBackknopf'
+import GoBackknopf from '../Auslagerung/Components/Knoepfe/GoBackknopf'
 /*
 ,route nach props maybe 
 

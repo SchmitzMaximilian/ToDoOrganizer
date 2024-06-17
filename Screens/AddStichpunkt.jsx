@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import {ScrollView } from 'react-native-gesture-handler'
-import Navknopf from '../Auslagerung/Components/Knöpfe/Navknopf'
+import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
 import Bearbeitungnotiz from '../Auslagerung/Components/Eingabeformular/Bearbeitungnotiz'
 //import * as SecureStore from 'expo-secure-store'
 const AddStichpunkt = (props) => {
