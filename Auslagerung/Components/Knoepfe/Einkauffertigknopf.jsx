@@ -4,12 +4,20 @@ import { speichern } from '../../functions/Services/SecureStorage/functionhandle
 
 /*
 
+arr.forEach((element[0]=true)=>{element[2]=(element[2]+(element[3] - element[2]))})
+arr.forEach(element=>{element[2]=(element[0]=true);{ {(element[2]+(element[3] - element[2]))} } })
+    console.log("what happend")
+    console.log(arr)
+    console.log("this happend")
 
 */
 const Einkauffertigknopf = (props) => {
 
   const fertig=async(props)=>{
     let arr= props.endArray
+    
+    console.log("what am i")
+    
     arr.forEach(element=>element[0]=false)
     console.log(arr)
     try{
@@ -40,6 +48,7 @@ const styles = StyleSheet.create({
     borderRadius:6,
     borderWidth:2,
     borderColor: '#0ea5e9',
+    marginVertical:10
   },
 
 })

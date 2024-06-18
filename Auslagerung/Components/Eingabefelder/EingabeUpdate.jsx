@@ -14,6 +14,7 @@ const EingabeUpdate = (props) => {
       arr[props.SI][1]=t
       try{
       const dataSave = await speichern(props.TK,JSON.stringify(arr))
+      console.log(arr)
       }catch(err){
         console.log(err)
       }

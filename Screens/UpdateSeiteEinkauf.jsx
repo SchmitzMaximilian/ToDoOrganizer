@@ -13,9 +13,7 @@ route.params.INHALT
 
 */
 const UpdateSeiteEinkauf = (props) => {
-    const NewArray = props.route.params.inhalt   
-  
-  
+    const NewArray = props.route.params.inhalt
   useEffect(()=>{
   },[])
   return (

@@ -1,15 +1,11 @@
 import React,{ useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-native';
-import CheckboxStichpunkt from '../../functions/CheckboxStichpunkt';
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 import CheckboxEinkauf from '../../functions/CheckboxEinkauf';
-import Einkauffertigcheck from '../../functions/Einkauffertigcheck';
 import Einkauffertigknopf from '../Knoepfe/Einkauffertigknopf';
 
-//Secure Storage mapping auslesen und einfügen
+
 /*
-setinhalt(JSON.parse(data))
-let index=JSON.parse(data).length
 
 
 */
@@ -34,7 +30,7 @@ const Einkaufsliste = (props) => {
   lesen()
   },[])
   return (
-    
+    <>
     <View key={id} style={styles.Kat}>    
     <Text style={{color:'#fff',fontSize:20,alignSelf:'center'}}>Einkaufsliste</Text>
     
@@ -51,10 +47,11 @@ const Einkaufsliste = (props) => {
     </View>
       :
       ""
-    }
-       <Einkauffertigknopf refresh={(neuesArray)=>{randKey(), setinhalt([...neuesArray])}} endArray={inhalt}/>
+    }      
     
     </View>
+    <Einkauffertigknopf refresh={(neuesArray)=>{randKey(), setinhalt([...neuesArray])}} endArray={inhalt}/>
+      </>
   )
 }
   

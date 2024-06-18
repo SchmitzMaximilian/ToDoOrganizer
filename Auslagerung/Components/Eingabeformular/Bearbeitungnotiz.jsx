@@ -2,12 +2,18 @@ import React, { useState,useEffect } from 'react'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 import NBS from '../Auswahlpicker/NotizBearbeitungSelect'
 import STPListe from '../Bearbeitung/STPListe'
-
+import { useIsFocused } from '@react-navigation/native';
 /*
-
+auswahlAnzeige(route.param.work)
 <EingabeAuswahlDatenset Labname={Textdatenset.Feldtexte.ID}/>
-        
-        
+        { isFocused?
+    <>
+      
+    </>
+    :
+    ""
+    }
+        const isFocused = useIsFocused()
 
 */
 
@@ -16,7 +22,10 @@ const Bearbeitungnotiz = (props) => {
   const [THEMA,setTHEMA]=useState([])
   const [Arrayname,setArrayname]=useState("Kategorie Auswählen")
   const [ThemaIndex,setThemaIndex]=useState(0)
+  console.log("wieder hier")
+  console.log(THEMA)
   const auswahlAnzeige= async(key)=>{
+    console.log("laufe")
     let name
     setThemaIndex(key)
     if(key>0){
@@ -63,6 +72,8 @@ const Bearbeitungnotiz = (props) => {
   useEffect(()=>{
   },[])
   return (<>
+    
+    
     <NBS storageValue={auswahlAnzeige} Auswahl={0} Index={2}/>
     {
       THEMA?.length>0?

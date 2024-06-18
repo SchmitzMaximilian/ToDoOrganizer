@@ -1,16 +1,18 @@
 import React from 'react'
 import {View, Text,StyleSheet } from 'react-native'
-import Plus from '../Knoepfe/Plus'
-import Minus from '../Knoepfe/Minus'
+/*
+
+
+*/
 const Anzeigetestdummy = () => {
   return (
     <>
     <View style={styles.listerow}>
       <Text style={styles.inputsanity}>Artikelname</Text>
       <Text style={styles.inputsanity}>Mindestbestand</Text>
-      <Plus/>
+      <Text style={styles.Basic}></Text>
       <Text style={styles.inputsanity}>Lagerbestand</Text>
-      <Minus/>
+      <Text style={styles.Basic}></Text>
       </View>
     </>
   )
@@ -35,7 +37,11 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     gap: 20,
     marginVertical:10
-  }
-  
+  },
+  Basic:{
+    alignSelf: 'center',
+    alignItems: 'center',
+    padding: 15
+  },
 });
 export default Anzeigetestdummy

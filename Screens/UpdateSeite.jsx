@@ -8,12 +8,9 @@ import GoBackknopf from '../Auslagerung/Components/Knoepfe/GoBackknopf'
 ,route nach props maybe 
 
 route.params.INHALT
-
 */
 const UpdateSeite = (props) => {
-  
-  
-  useEffect(()=>{
+  useEffect(()=>{ 
   },[])
   return (
     <>

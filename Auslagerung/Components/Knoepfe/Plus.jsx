@@ -3,24 +3,6 @@ import {TouchableOpacity, Text, StyleSheet} from 'react-native'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 
 /*
-Lagerbestandwert + 1
-?wert aus anzeige feld Lagerbestand nehmen und +1 erhöhen dann updaten/neu abspeichern
-const [count,setcount]=useState(JSON.parse(props.Zahl))
-  const increase= async(props)=>{
-      
-      console.log(count)
-      const data = await ausgeben("Einkaufsliste")
-      if(data){
-      let arr=JSON.parse(data)
-      arr[props.id][2]=JSON.stringify(count)
-      console.log("change check")
-      console.log(arr)
-      try{
-        await update("Einkaufsliste",JSON.stringify(arr))
-         }catch(err){
-           console.log(err)
-         }}
-  }
 
 */
 
