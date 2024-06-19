@@ -1,6 +1,10 @@
 import React, {  useEffect, useState } from "react";
 import {View, TextInput,StyleSheet } from 'react-native'
 import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
+
+/*
+
+*/
 const EingabeUpdate = (props) => {
   const[txtvalue,settxtvalue]=useState(props.Labname); 
   
@@ -14,6 +18,7 @@ const EingabeUpdate = (props) => {
       arr[props.SI][1]=t
       try{
       const dataSave = await speichern(props.TK,JSON.stringify(arr))
+      console.log("+++++ " + JSON.parse(dataSave) + " +++++")
       console.log(arr)
       }catch(err){
         console.log(err)

@@ -9,6 +9,7 @@ arr.forEach(element=>{element[2]=(element[0]=true);{ {(element[2]+(element[3] - 
     console.log("what happend")
     console.log(arr)
     console.log("this happend")
+    arr.filter =(element[0]=true)
 
 */
 const Einkauffertigknopf = (props) => {

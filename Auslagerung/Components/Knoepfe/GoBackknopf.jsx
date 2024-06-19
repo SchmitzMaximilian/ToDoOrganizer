@@ -1,9 +1,13 @@
 import React from 'react'
 import { TouchableOpacity,Text,StyleSheet } from 'react-native'
-
+//onPress={()=>props.navigation.navigate({name:"AddStichpunkt"})}
 function GoBackknopf(props) {
+  const refresh=(props)=>{
+    props.SMV(!props.MV)
+    props.function(props.TI)
+  }
   return (
-    <TouchableOpacity onPress={()=>props.navigation.navigate({name:"AddStichpunkt"})} style={styles.Abspeichern}>
+    <TouchableOpacity onPress={() => refresh(props) } style={styles.Abspeichern}>
       <Text style={{color:'black'}}>OK</Text>
       </TouchableOpacity>
   )

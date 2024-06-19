@@ -5,8 +5,6 @@ import ToDoListe from '../../Screens/ToDoListe';
 import Vorratslager from '../../Screens/Vorratslager';
 import Hinzufügen from '../../Screens/Hinzufügen';
 import AddStichpunkt from '../../Screens/AddStichpunkt';
-import UpdateSeite from '../../Screens/UpdateSeite';
-import UpdateSeiteEinkauf from '../../Screens/UpdateSeiteEinkauf';
 import Einkauf from '../../Screens/Einkauf';
 
 const Navbar = (props) => {
@@ -19,8 +17,6 @@ const Navbar = (props) => {
     <Stack.Screen name = "Einkauf"                     component = {Einkauf} options={{headerShown:false}} /> 
     <Stack.Screen name = "Hinzufügen"                  component = {Hinzufügen} options={{headerShown:false}} />
     <Stack.Screen name = "AddStichpunkt"               component = {AddStichpunkt} options={{headerShown:false}} />
-    <Stack.Screen name = "UpdateSeiteEinkauf"          component = {UpdateSeiteEinkauf} options={{headerShown:false}} />
-    <Stack.Screen name = "UpdateSeite"                 component = {UpdateSeite} options={{headerShown:false}} />
     </Stack.Navigator>
     </NavigationContainer>
   );

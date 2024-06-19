@@ -2,18 +2,21 @@ import React, { useState,useEffect } from 'react'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 import NBS from '../Auswahlpicker/NotizBearbeitungSelect'
 import STPListe from '../Bearbeitung/STPListe'
-import { useIsFocused } from '@react-navigation/native';
+import { useFocusEffect } from '@react-navigation/native';
+
 /*
 auswahlAnzeige(route.param.work)
 <EingabeAuswahlDatenset Labname={Textdatenset.Feldtexte.ID}/>
-        { isFocused?
-    <>
-      
-    </>
-    :
-    ""
-    }
-        const isFocused = useIsFocused()
+        
+        
+console.log("#######################################")
+    console.log(THEMA)
+    console.log("#######################################")
+
+
+
+
+
 
 */
 
@@ -24,8 +27,10 @@ const Bearbeitungnotiz = (props) => {
   const [ThemaIndex,setThemaIndex]=useState(0)
   console.log("wieder hier")
   console.log(THEMA)
+  console.log(Arrayname)
+  console.log("---------------------------------------------------------")
   const auswahlAnzeige= async(key)=>{
-    console.log("laufe")
+    console.log("Enter auswahlAnzeige")
     let name
     setThemaIndex(key)
     if(key>0){
@@ -58,19 +63,43 @@ const Bearbeitungnotiz = (props) => {
        name= "Kategorie Auswählen"
        break;
     } 
+    console.log("After Switch")
+    setArrayname(name)    
     const data = await ausgeben(name)
-    setArrayname(name)
+    console.log("after await")
+    console.log(data)
     setTHEMA(JSON.parse(data))
+    
+    
   }else if(key==0){
+    console.log("else if")
   setArrayname("Kategorie Auswählen")
   setTHEMA([])
 }else{
+  console.log("else")
   setArrayname(Arrayname)
 }
   }
 
-  useEffect(()=>{
-  },[])
+  const updateAnzeige =async()=>{
+    console.log("got called")
+    if(Arrayname!="Kategorie Auswählen"){
+    const newdata = await ausgeben(Arrayname)
+    setTHEMA(JSON.parse(newdata))
+  }
+  else{
+    console.log("dodged")
+    setTHEMA([])
+  }
+
+  }
+
+
+
+
+  useFocusEffect(React.useCallback(()=>{
+    updateAnzeige(Arrayname)
+  },[Arrayname]))
   return (<>
     
     
@@ -78,7 +107,7 @@ const Bearbeitungnotiz = (props) => {
     {
       THEMA?.length>0?
       <>
-      <STPListe Arr={THEMA} navigation={props.navigation} function={auswahlAnzeige} TI={ThemaIndex} Arrayname={Arrayname}/>
+      <STPListe Arr={THEMA} navigation={props.navigation} function={updateAnzeige} TI={ThemaIndex} ArrayN={Arrayname}/>
       </>
       :
       ""
