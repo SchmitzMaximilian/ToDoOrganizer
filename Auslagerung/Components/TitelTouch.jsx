@@ -28,7 +28,8 @@ const styles=()=>StyleSheet.create({
     borderWidth: 1,
     textAlign: 'center',
     marginBottom:10,
-    color:'#fff'
+    color:'#fff',
+    fontSize:20
     
   },
   Ueberschrift2pressed: {
@@ -38,6 +39,7 @@ const styles=()=>StyleSheet.create({
     backgroundColor: '#0ea5e9',
     borderWidth: 1,
     textAlign: 'center',
+    fontSize:20
     
   },
   

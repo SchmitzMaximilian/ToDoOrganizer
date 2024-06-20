@@ -3,19 +3,18 @@ import {View, Text,StyleSheet } from 'react-native'
 import Plus from '../Knoepfe/Plus'
 import Minus from '../Knoepfe/Minus'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
-//Secure storage einfügen und beim mapping einbinden anstatt datenset
+import { useFocusEffect } from '@react-navigation/native';
+
 const Anzeigefeld = (props) => {
   const [LagerArray,setLagerArray]=useState([])
-  console.log("möp")
-
   const abruf=async()=>{
     const data = await ausgeben("Einkaufsliste")
     setLagerArray(JSON.parse(data))
   }
-  useEffect(()=>{
+  useFocusEffect(React.useCallback(()=>{
     abruf()
      
-  },[])
+  },[]))
   return (
     <>
     {

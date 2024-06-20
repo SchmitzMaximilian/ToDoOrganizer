@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {TouchableOpacity, Text, StyleSheet} from 'react-native' 
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
-
-/*
-
-*/
-
-
 const Plus = (props) => {
   const increase= async(props)=>{
     let count=JSON.parse(props.Zahl)
@@ -35,11 +29,11 @@ const styles = StyleSheet.create({
   Basic:{
     alignSelf: 'center',
     alignItems: 'center',
-    backgroundColor: '#0ea5e9',
+    backgroundColor: '#2563eb',
     padding: 10,
     borderRadius:6,
     borderWidth:2,
-    borderColor: '#0ea5e9', 
+    borderColor: '#2563eb', 
   },
 
 })

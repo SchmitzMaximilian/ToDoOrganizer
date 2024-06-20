@@ -3,18 +3,11 @@ import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-nat
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 import CheckboxEinkauf from '../../functions/CheckboxEinkauf';
 import Einkauffertigknopf from '../Knoepfe/Einkauffertigknopf';
-
-
-/*
-
-
-*/
+import { useFocusEffect } from '@react-navigation/native';
 const Einkaufsliste = (props) => {
   const [inhalt,setinhalt]=useState([])
   const [id, setID] = useState(0)
   const name = "Einkaufsliste"
-  console.log("prüfung")
-  console.log(inhalt)
   const randKey = () =>{
     setID(Math.random())
   }
@@ -24,15 +17,14 @@ const Einkaufsliste = (props) => {
       setinhalt(JSON.parse(data))
       console.log(data)
     }
-    
   }
-  useEffect(()=>{
+  useFocusEffect(React.useCallback(()=>{
   lesen()
-  },[])
+  },[]))
   return (
     <>
     <View key={id} style={styles.Kat}>    
-    <Text style={{color:'#fff',fontSize:20,alignSelf:'center'}}>Einkaufsliste</Text>
+    <Text style={{color:'#fff',fontSize:20,paddingBottom:10,alignSelf:'center'}}>Einkaufsliste</Text>
     
     
     {
@@ -61,7 +53,7 @@ const styles = StyleSheet.create({
     borderTopWidth:2,
     borderTopColor:"black",
     alignSelf:"stretch",
-    backgroundColor:"#d946ef"
+    backgroundColor:"#7e22ce"
   },
   Thema:{
     color:'#fff',
@@ -71,6 +63,7 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor: 'gray',
     alignItems:'flex-start',
+    paddingTop:10,
     borderWidth:2,
     borderColor:"black",
   },

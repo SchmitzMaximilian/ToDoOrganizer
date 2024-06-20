@@ -3,34 +3,11 @@ import { speichern,ausgeben,löschen,update} from '../../functions/Services/Secu
 import NBS from '../Auswahlpicker/NotizBearbeitungSelect'
 import STPListe from '../Bearbeitung/STPListe'
 import { useFocusEffect } from '@react-navigation/native';
-
-/*
-auswahlAnzeige(route.param.work)
-<EingabeAuswahlDatenset Labname={Textdatenset.Feldtexte.ID}/>
-        
-        
-console.log("#######################################")
-    console.log(THEMA)
-    console.log("#######################################")
-
-
-
-
-
-
-*/
-
-
 const Bearbeitungnotiz = (props) => {
   const [THEMA,setTHEMA]=useState([])
   const [Arrayname,setArrayname]=useState("Kategorie Auswählen")
   const [ThemaIndex,setThemaIndex]=useState(0)
-  console.log("wieder hier")
-  console.log(THEMA)
-  console.log(Arrayname)
-  console.log("---------------------------------------------------------")
   const auswahlAnzeige= async(key)=>{
-    console.log("Enter auswahlAnzeige")
     let name
     setThemaIndex(key)
     if(key>0){
@@ -62,41 +39,28 @@ const Bearbeitungnotiz = (props) => {
      default:
        name= "Kategorie Auswählen"
        break;
-    } 
-    console.log("After Switch")
+    }
     setArrayname(name)    
     const data = await ausgeben(name)
-    console.log("after await")
-    console.log(data)
     setTHEMA(JSON.parse(data))
-    
-    
   }else if(key==0){
-    console.log("else if")
   setArrayname("Kategorie Auswählen")
   setTHEMA([])
 }else{
-  console.log("else")
   setArrayname(Arrayname)
 }
   }
 
   const updateAnzeige =async()=>{
-    console.log("got called")
     if(Arrayname!="Kategorie Auswählen"){
     const newdata = await ausgeben(Arrayname)
     setTHEMA(JSON.parse(newdata))
   }
   else{
-    console.log("dodged")
     setTHEMA([])
   }
 
   }
-
-
-
-
   useFocusEffect(React.useCallback(()=>{
     updateAnzeige(Arrayname)
   },[Arrayname]))

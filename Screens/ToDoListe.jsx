@@ -8,13 +8,11 @@ import Donnerstag from '../Auslagerung/Components/Wochentage/Donnerstag'
 import Freitag from '../Auslagerung/Components/Wochentage/Freitag'
 import Samstag from '../Auslagerung/Components/Wochentage/Samstag'
 import Sonntag from '../Auslagerung/Components/Wochentage/Sonntag'
-
 const ToDoListe = (props) => {
   return (
   <>
     <SafeAreaView style={styles.sav}>
     <Navknopf navigation={props.navigation} />
-      
       <ScrollView style={{backgroundColor: 'transparent'}}>
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
@@ -27,7 +25,6 @@ const ToDoListe = (props) => {
         <Freitag/>
         <Samstag/>
         <Sonntag/>
-        
         </View>
         </View>
         </View>
@@ -68,9 +65,6 @@ const styles = StyleSheet.create({
     marginTop:30,
     alignSelf:'center',
     paddingVertical:30,
-  },
-  placeholder:{
-
   },
 })
 export default ToDoListe

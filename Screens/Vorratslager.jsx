@@ -13,7 +13,7 @@ const Vorratslager = (props) => {
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10,flex:1}}>
-          <Text style={{color:'#fff',alignSelf:"center",fontSize:24}}>Vorratslager</Text>
+          <Text style={{color:'#fff',alignSelf:"center",fontSize:30,paddingBottom:20}}>Vorratslager</Text>
           <Anzeigetestdummy/>
           <Anzeigefeld/>
         </View>
@@ -45,10 +45,7 @@ const styles = StyleSheet.create({
     borderWidth:1,
     marginTop:30,
     alignSelf:'center',
-    paddingVertical:30,
-  },
-  placeholder:{
-
+    paddingVertical:10,
   },
 })
 

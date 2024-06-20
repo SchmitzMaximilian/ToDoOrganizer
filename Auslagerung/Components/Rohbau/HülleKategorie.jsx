@@ -7,45 +7,35 @@ import Sonstiges from '../Kategorie/Sonstiges';
 import Formulare from '../Kategorie/Formulare';
 import Reisecheckliste from '../Kategorie/Reisecheckliste';
 import Geburtstage from '../Kategorie/Geburtstage';
-import Einkaufsliste from '../Kategorie/Einkaufsliste';
-
-/*
-<View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Einkaufsliste</Text>
-  <Einkaufsliste id={1}/>
-  </View>
-
-*/
 const HülleKategorie = () => {
   return (
   <>  
   <View style={styles.thema}>
     <View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Allgemein</Text>
+  <Text style={{color:'#fff',paddingBottom:5,paddingTop:5,fontSize:18}}>Allgemein</Text>
   <Allgemein id={1} />
   </View><View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Hausarbeiten</Text> 
+  <Text style={{color:'#fff',paddingBottom:5,paddingTop:5,fontSize:18}}>Hausarbeiten</Text> 
    <Hausarbeit  id={1}   />
   </View>
-  
   <View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Termine</Text>
+  <Text style={{color:'#fff',paddingBottom:5,paddingTop:5,fontSize:18}}>Termine</Text>
   <Termine id={1}/>
   </View>
   <View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Geburtstage</Text>
+  <Text style={{color:'#fff',paddingBottom:5,paddingTop:5,fontSize:18}}>Geburtstage</Text>
   <Geburtstage id={1}/>
   </View>
   <View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Reisecheckliste</Text>
+  <Text style={{color:'#fff',paddingBottom:5,paddingTop:5,fontSize:18}}>Reisecheckliste</Text>
   <Reisecheckliste id={1}/>
   </View>
   <View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Formulare</Text>
+  <Text style={{color:'#fff',paddingBottom:5,paddingTop:5,fontSize:18}}>Formulare</Text>
   <Formulare id={1}/>
   </View>
   <View style={styles.Kat}>
-  <Text style={{color:'#fff'}}>Sonstiges</Text>
+  <Text style={{color:'#fff',paddingBottom:5,paddingTop:5,fontSize:18}}>Sonstiges</Text>
   <Sonstiges id={1}/>
   </View>
 
@@ -58,7 +48,8 @@ const styles = StyleSheet.create({
     gap:10,
     flex:8,
     alignContent:'center',
-    paddingHorizontal:'11%'
+    paddingHorizontal:'11%',
+    paddingTop:10
   },
   Kat:{
     flex:1,

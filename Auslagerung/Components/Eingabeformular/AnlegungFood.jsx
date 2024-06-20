@@ -5,20 +5,15 @@ import { Textdatenset } from '../../Datensets/Textdatenset'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 import EingabefeldBestand from '../Eingabefelder/EingabeFood/EingabefeldBestand'
 import EingabefeldMinimum from '../Eingabefelder/EingabeFood/EingabefeldMinimum'
-
-//addFood() bei useEffect?
-         // 
-//console.log()
 const AnlegungFood = () => {
     const [selectIndex,setselectIndex]=useState(0)
   const addFood= async()=>{
     let name = "Einkaufsliste"
     const data = await ausgeben(name)
-    console.log(data)
      let index =JSON.parse(data).length
      setselectIndex(index)
      let ekarr=JSON.parse(data)
-     ekarr.push([false,"","",""]);
+     ekarr.push([false,"","","","0"]);
    const EinkaufSpeichern =await speichern(name,JSON.stringify(ekarr))
   }
   useEffect(()=>{
@@ -33,5 +28,4 @@ const AnlegungFood = () => {
   </>
   )
 }
-// Für eingabe feld switch case des labnamen um array leerstellen befüllung festzulegen
 export default AnlegungFood

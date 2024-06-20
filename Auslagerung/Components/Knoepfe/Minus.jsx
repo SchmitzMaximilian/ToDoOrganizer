@@ -15,8 +15,6 @@ const Minus = (props) => {
     try{
       await update("Einkaufsliste",JSON.stringify(arr))
       props.refresh(arr)
-      console.log(arr)
-      console.log("minus")
        }catch(err){
          console.log(err)
        }
@@ -38,11 +36,11 @@ const styles = StyleSheet.create({
   Basic:{
     alignSelf: 'center',
     alignItems: 'center',
-    backgroundColor: '#0ea5e9',
+    backgroundColor: '#2563eb',
     padding: 10,
     borderRadius:6,
     borderWidth:2,
-    borderColor: '#0ea5e9',
+    borderColor: '#2563eb',
   },
 
 })

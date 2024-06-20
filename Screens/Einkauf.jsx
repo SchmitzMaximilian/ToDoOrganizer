@@ -1,19 +1,18 @@
-import React ,{ SafeAreaView, Text, View,StyleSheet } from 'react-native'
+import React ,{ SafeAreaView, Text, View,StyleSheet,} from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
 import Einkaufsliste from '../Auslagerung/Components/Kategorie/Einkaufsliste'
 const Einkauf = (props) => {
+  
   return (
     <>
     <SafeAreaView style={styles.sav}>
     <Navknopf navigation={props.navigation} />
-      
       <ScrollView style={{backgroundColor: 'transparent'}}>
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
         <Einkaufsliste id={1}/>
-        
         </View>
         </View>
         </View>
@@ -67,6 +66,16 @@ const styles = StyleSheet.create({
     alignItems:'center',
     borderWidth:2,
     borderColor:"black",
+  },
+  Basic:{
+    alignSelf: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0ea5e9',
+    padding: 10,
+    borderRadius:6,
+    borderWidth:2,
+    borderColor: '#0ea5e9',
+    marginVertical:10
   },
 })
 export default Einkauf

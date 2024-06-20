@@ -2,18 +2,14 @@ import React,{ useContext, useEffect, useState } from 'react'
 import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-native';
 import CheckboxStichpunkt from '../../functions/CheckboxStichpunkt';
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
-
 const Formulare = () => {
   const [inhalt,setinhalt]=useState([])
   const name = "Formulare"
-  console.log(inhalt)
   const lesen = async()=>{    
     const data = await ausgeben(name)
     if(data){
       setinhalt(JSON.parse(data))
-      console.log(data)
     }
-    
   }
   useEffect(()=>{
   lesen()
@@ -39,7 +35,7 @@ const styles = StyleSheet.create({
     borderTopWidth:2,
     borderTopColor:"black",
     alignSelf:"stretch",
-    backgroundColor:"#d946ef"
+    backgroundColor:"#65a30d"
   }
 
 })

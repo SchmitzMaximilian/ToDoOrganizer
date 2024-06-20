@@ -1,6 +1,5 @@
 import React from 'react'
 import { TouchableOpacity,Text,StyleSheet } from 'react-native'
-//onPress={()=>props.navigation.navigate({name:"AddStichpunkt"})}
 function GoBackknopf(props) {
   const refresh=(props)=>{
     props.SMV(!props.MV)

@@ -3,31 +3,19 @@ import {View, TextInput,StyleSheet } from 'react-native'
 import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
 const EingabefeldNotiz = (props) => {
   const[txtvalue,settxtvalue]=useState('');
-  const [erfolg,seterfolg]=useState(0) 
-  
+  const [erfolg,seterfolg]=useState(0)
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
       text = t;
-      console.log(props.SI)
-
-      const data = await ausgeben(props.TK) 
-      console.log(JSON.parse(props.SI))
-
+      const data = await ausgeben(props.TK)
       if(data){
       let arr=JSON.parse(data)
       arr[props.SI][1]=t
-      console.log(arr)
       try{
-
       const dataSave = await speichern(props.TK,JSON.stringify(arr))
-      
-      console.log("+++++++")
-      console.log(dataSave)
       if(dataSave==true){
         seterfolg(1)
         setTimeout(()=>{seterfolg(0)},1000)
-   
-
       }
       }catch(err){
         console.log(err)
@@ -36,7 +24,6 @@ const EingabefeldNotiz = (props) => {
       } 
   }
     useEffect(()=>{
-      console.log(props)
       settxtvalue('')
      },[props])
   return (

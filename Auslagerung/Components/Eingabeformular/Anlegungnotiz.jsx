@@ -4,28 +4,10 @@ import { Textdatenset } from '../../Datensets/Textdatenset'
 import EingabefeldNotiz from '../Eingabefelder/EingabefeldNotiz'
 import KategorieSelect from '../Auswahlpicker/KategorieSelect'
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
-/*
-  const testschreiben=async(key)=>{
-    const data = await ausgeben(key)
-    if(data){
-    let arr=JSON.parse(data)
-    arr[selectIndex][1]="test"
-    const dataSpeichern = await speichern(key,JSON.stringify(arr))
-    if(dataSpeichern){
-    const datatest = await ausgeben(key)
-    
-     console.log(datatest)}
-    }
-    
-  }
-
-*/
 const Anlegungnotiz = () => {
   const [selectIndex,setselectIndex]=useState(0)
   const [ThemaKey,setThemaKey]=useState("")
   const selectKat= async(key)=>{
-    console.log("#################  Neuer Log ##########################")
-    console.log(key)
     let name
     if(key>0){
     switch(key){
@@ -53,24 +35,15 @@ const Anlegungnotiz = () => {
      default:
        name= "null"
        break;
-    } 
-    console.log(name)
-    console.log("#######")
+    }
     setThemaKey(name)
-    console.log("TK " + ThemaKey)
    const data = await ausgeben(name)
-   console.log(data)
    let index=JSON.parse(data).length
-   console.log("#######+")
-   console.log(index)
-   console.log("#######-")
    setselectIndex(index)
-   console.log("SI " + selectIndex)
    let darr=JSON.parse(data)
    darr.push([false,""]);
    const dataSpeichern = await speichern(name,JSON.stringify(darr))
-   console.log("Problem")
-   console.log(dataSpeichern)}else{
+  }else{
     
    }
   }

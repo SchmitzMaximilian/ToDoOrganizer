@@ -7,16 +7,7 @@ import GoBackknopf from '../Knoepfe/GoBackknopf';
 import UpdatefeldFood from '../Eingabefelder/UpdateFood/UpdatefeldFood';
 import UpdatefeldBestand from '../Eingabefelder/UpdateFood/UpdatefeldBestand';
 import UpdatefeldMinimum from '../Eingabefelder/UpdateFood/UpdatefeldMinimum';
-/*
-const inhalt = item
-      const position = index
-      <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.Abspeichern}>
-      <Text style={{color:'black'}}>OK</Text>
-      </TouchableOpacity>
-
-*/
 const STPListe = (props) => {
-  console.log("Enter STPListe")
   const [modalVisible, setModalVisible] = useState(false)
   const [modalFoodVisible, setModalFoodVisible] = useState(false)
   const [inhalt,setinhalt] =useState('')
@@ -26,25 +17,16 @@ const STPListe = (props) => {
      setposition(index)
     if(props.ArrayN=="Einkaufsliste"){
       setModalFoodVisible(true)
-      
-      console.log("WIP")
-      
     }
     else{
-      
       setModalVisible(true)
-      console.log("WIP")
-      
     }
     
   }
   const vernichten= async(index)=>{
-    console.log("Enter Delete")
     props.Arr.splice(index,1)
     await update(props.ArrayN,JSON.stringify(props.Arr))
-    console.log("Jetzt kommt die Funktion")
     props.function(props.TI)
-    console.log("Exit Liste")
   }
 
   useEffect(()=>{
@@ -74,9 +56,8 @@ const STPListe = (props) => {
       <Text style={styles.TextElemente}>Keine Einträge vorhanden</Text>
     } 
 
-<Modal
-      animationType="slide"
-      
+      <Modal
+      animationType="slide"      
       visible={modalVisible}
       >
         <SafeAreaView style={styles.sav}>

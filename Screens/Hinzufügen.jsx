@@ -5,9 +5,6 @@ import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
 import AuswahlBearbeitung from '../Auslagerung/Components/Knoepfe/AuswahlBearbeitung'
 import Anlegungnotiz from '../Auslagerung/Components/Eingabeformular/Anlegungnotiz'
 import AnlegungFood from '../Auslagerung/Components/Eingabeformular/AnlegungFood'
-/*
-
-*/
 const Hinzufügen = (props) => {
   const [stshow,setstshow]=useState(false)
   const [lmshow,setlmshow]=useState(false)
@@ -68,9 +65,6 @@ const styles = StyleSheet.create({
     marginTop:30,
     alignSelf:'center',
     paddingVertical:30,
-  },
-  placeholder:{
-
   },
 })
 export default Hinzufügen

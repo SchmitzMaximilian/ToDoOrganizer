@@ -5,12 +5,10 @@ import { ausgeben } from '../../functions/Services/SecureStorage/functionhandler
 const Geburtstage = () => {
   const [inhalt,setinhalt]=useState([])
   const name = "Geburtstage"
-  console.log(inhalt)
   const lesen = async()=>{    
     const data = await ausgeben(name)
     if(data){
       setinhalt(JSON.parse(data))
-      console.log(data)
     }
     
   }
@@ -38,7 +36,7 @@ const styles = StyleSheet.create({
     borderTopWidth:2,
     borderTopColor:"black",
     alignSelf:"stretch",
-    backgroundColor:"#d946ef"
+    backgroundColor:"#65a30d"
   }
 
 })

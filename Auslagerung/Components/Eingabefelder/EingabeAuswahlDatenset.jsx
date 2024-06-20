@@ -3,21 +3,15 @@ import {View, TextInput,StyleSheet } from 'react-native'
 import { ausgeben, speichern } from "../../functions/Services/SecureStorage/functionhandler";
 const EingabeAuswahlDatenset = (props) => {
   const[txtvalue,settxtvalue]=useState(''); 
-  
     const STPerstellen= async(t)=>{
       settxtvalue(t) 
       text = t;
-console.log(props.SI)   
-    const data = await ausgeben(props.TK) 
-    console.log(JSON.parse(props.SI))
+    const data = await ausgeben(props.TK)
     if(data){
       let arr=JSON.parse(data)
       arr[props.SI][1]=t
-      console.log(arr)
       try{
       const dataSave = await speichern(props.TK,JSON.stringify(arr))
-      console.log("+++++++")
-      console.log(dataSave)
       }catch(err){
         console.log(err)
       }
@@ -25,8 +19,6 @@ console.log(props.SI)
     } 
   }
     useEffect(()=>{
-      console.log(props)
-      
      },[props])
   return (
     <View >

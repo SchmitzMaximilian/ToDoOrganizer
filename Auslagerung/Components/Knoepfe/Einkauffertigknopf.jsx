@@ -1,30 +1,33 @@
 import React, { useContext, useEffect, useState } from 'react';
 import {TouchableOpacity,StyleSheet, Text, View } from 'react-native';
 import { speichern } from '../../functions/Services/SecureStorage/functionhandler';
-
-/*
-
-arr.forEach((element[0]=true)=>{element[2]=(element[2]+(element[3] - element[2]))})
-arr.forEach(element=>{element[2]=(element[0]=true);{ {(element[2]+(element[3] - element[2]))} } })
-    console.log("what happend")
-    console.log(arr)
-    console.log("this happend")
-    arr.filter =(element[0]=true)
-
-*/
 const Einkauffertigknopf = (props) => {
-
   const fertig=async(props)=>{
     let arr= props.endArray
-    
-    console.log("what am i")
-    
-    arr.forEach(element=>element[0]=false)
-    console.log(arr)
+    let narr=[]
+    arr.forEach((e)=>{
+      if(e[0]==true&&(Number(e[3])>Number(e[2]))&&(Number(e[4])==0)){ //Nur wenn normal Minimum kleiner als Lager ohne extra
+        let b=e
+        b[2]=JSON.stringify(Number(e[2])+(Number(e[3])-Number(e[2])));
+        narr.push(b)
+      }else if(e[0]==true&&(Number(e[3])>Number(e[2]))&&(Number(e[4])>0)){ //minimum kleiner als lager + extra
+        let b=e
+        b[2]=JSON.stringify(Number(e[2])+(Number(e[3])-Number(e[2]))+Number(e[4]));
+        b[4]=JSON.stringify(0)
+        narr.push(b)
+      }else if(e[0]==true&&(Number(e[3])<=Number(e[2]))&&(Number(e[4])>0)){ //Minimum nicht unterschritten + extra
+        let b=e
+        b[2]=JSON.stringify(Number(e[2])+(Number(e[4])));
+        b[4]=JSON.stringify(0)
+        narr.push(b)
+      }else{  
+        narr.push(e)
+      }
+    })
+    narr.forEach(element=>element[0]=false)
     try{
-      await speichern("Einkaufsliste",JSON.stringify(arr))
-      props.refresh(arr)
-      console.log("did it")
+      await speichern("Einkaufsliste",JSON.stringify(narr))
+      props.refresh(narr)
     }catch(err){
       console.log(err)
     }
@@ -44,11 +47,11 @@ const styles = StyleSheet.create({
   Basic:{
     alignSelf: 'center',
     alignItems: 'center',
-    backgroundColor: '#0ea5e9',
+    backgroundColor: '#2563eb',
     padding: 10,
     borderRadius:6,
     borderWidth:2,
-    borderColor: '#0ea5e9',
+    borderColor: '#2563eb',
     marginVertical:10
   },
 
