@@ -19,7 +19,10 @@ const EingabefeldBestand = (props) => {
     } 
   }
     useEffect(()=>{
-      
+      if(props.P==true){
+        settxtvalue('')
+        props.PF(false)
+      }
      },[props])
   return (
     <View >

@@ -1,13 +1,7 @@
 import React ,{ SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
-import Montag from '../Auslagerung/Components/Wochentage/Montag'
-import Dienstag from '../Auslagerung/Components/Wochentage/Dienstag'
-import Mittwoch from '../Auslagerung/Components/Wochentage/Mittwoch'
-import Donnerstag from '../Auslagerung/Components/Wochentage/Donnerstag'
-import Freitag from '../Auslagerung/Components/Wochentage/Freitag'
-import Samstag from '../Auslagerung/Components/Wochentage/Samstag'
-import Sonntag from '../Auslagerung/Components/Wochentage/Sonntag'
+import Woche from '../Auslagerung/Components/Wochentage/Woche'
 const ToDoListe = (props) => {
   return (
   <>
@@ -17,14 +11,8 @@ const ToDoListe = (props) => {
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
-        <Text style={{color:'#fff',alignSelf:"center",fontSize:24}}>ToDoCheckliste</Text>
-        <Montag/>        
-        <Dienstag/>
-        <Mittwoch/>
-        <Donnerstag/>
-        <Freitag/>
-        <Samstag/>
-        <Sonntag/>
+        <Text style={{color:'#fff',alignSelf:"center",fontSize:30,paddingBottom:20}}>ToDoCheckliste</Text>
+        <Woche/>
         </View>
         </View>
         </View>

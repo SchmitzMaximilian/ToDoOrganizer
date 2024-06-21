@@ -1,13 +1,18 @@
 import React, { useState } from 'react'
-import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
+import { SafeAreaView, Text, View,StyleSheet, TouchableOpacity } from 'react-native'
 import {ScrollView } from 'react-native-gesture-handler'
 import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
 import AuswahlBearbeitung from '../Auslagerung/Components/Knoepfe/AuswahlBearbeitung'
 import Anlegungnotiz from '../Auslagerung/Components/Eingabeformular/Anlegungnotiz'
 import AnlegungFood from '../Auslagerung/Components/Eingabeformular/AnlegungFood'
+import { useFocusEffect } from '@react-navigation/native';
 const Hinzufügen = (props) => {
   const [stshow,setstshow]=useState(false)
   const [lmshow,setlmshow]=useState(false)
+  useFocusEffect(React.useCallback(()=>{
+    setstshow(false)
+    setlmshow(false)
+  },[]))
   return (
     <>
     <SafeAreaView style={styles.sav}>    
@@ -16,12 +21,13 @@ const Hinzufügen = (props) => {
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
-        <Text style={{color:'#fff',alignSelf:"center",fontSize:24}}>Stichpunkterzeugung</Text>
+        <Text style={{color:'#fff',alignSelf:"center",fontSize:30,paddingBottom:20}}>Stichpunkterzeugung</Text>
           <AuswahlBearbeitung KS={setstshow} VL={setlmshow} />
         {
           stshow?
           <>
           <Anlegungnotiz/>
+          
           </>
         :
         ""
@@ -30,6 +36,7 @@ const Hinzufügen = (props) => {
           lmshow?
           <>
           <AnlegungFood/>
+          
           </>
           :
           ""
@@ -52,8 +59,7 @@ const styles = StyleSheet.create({
     height:'100%',
     justifyContent: 'flex-start',
     backgroundColor: '#00000099',
-  },
-  
+  },    
   ContainerFragebogen:{
     width:'90%', 
     backgroundColor: '#00000099',  

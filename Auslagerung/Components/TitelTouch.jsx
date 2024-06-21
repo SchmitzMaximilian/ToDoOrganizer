@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import {TouchableOpacity, Text, StyleSheet} from 'react-native' 
+import HülleKategorie from './Rohbau/HülleKategorie'
 
 const TitelTouch = (props) => {
   return (
    <>
     {
-      props.show?
+      props.show==props.V?
     <> 
-      <TouchableOpacity onPress={()=>props.setshow(!props.show)}>
+      <TouchableOpacity onPress={()=>props.setshow(props.V)}>
         <Text style={styles().Ueberschrift2pressed}>{props.T}</Text>
       </TouchableOpacity>
+      <HülleKategorie/>
+      
     </>
     :
-    <TouchableOpacity onPress={()=>props.setshow(!props.show)}>
+    
+    <TouchableOpacity onPress={()=>props.setshow(props.V)}>
       <Text style={styles().Ueberschrift}>{props.T}</Text>
     </TouchableOpacity>
+    
+    
     }   
    </>
   )

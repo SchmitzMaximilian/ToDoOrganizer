@@ -9,6 +9,7 @@ const Einkauffertigknopf = (props) => {
       if(e[0]==true&&(Number(e[3])>Number(e[2]))&&(Number(e[4])==0)){ //Nur wenn normal Minimum kleiner als Lager ohne extra
         let b=e
         b[2]=JSON.stringify(Number(e[2])+(Number(e[3])-Number(e[2])));
+        b[4]=JSON.stringify(0)
         narr.push(b)
       }else if(e[0]==true&&(Number(e[3])>Number(e[2]))&&(Number(e[4])>0)){ //minimum kleiner als lager + extra
         let b=e
@@ -21,6 +22,7 @@ const Einkauffertigknopf = (props) => {
         b[4]=JSON.stringify(0)
         narr.push(b)
       }else{  
+        e[4]=JSON.stringify(0)
         narr.push(e)
       }
     })

@@ -34,7 +34,7 @@ export default function CheckboxEinkauf(props) {
       onValueChange={(itemValue) =>clickhandler(itemValue) }
       style={styles.checkbox}
       /><TouchableOpacity onPress={() => setModalFoodVisible(true) }>
-      <Text style={styles.beschreibung}>{"kaufe " + props.Item[1] + " "}{menge}</Text>
+      <Text style={styles.beschreibung}>{" " + props.Item[1] + " "}{menge}</Text>
       </TouchableOpacity>
       </View >         
         

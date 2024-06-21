@@ -1,5 +1,5 @@
 import React,{ useContext, useEffect, useState } from 'react'
-import { StyleSheet, Text, View, SafeAreaView, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ImageBackground, Alert } from 'react-native';
 import { speichern,ausgeben,löschen,update} from '../../functions/Services/SecureStorage/functionhandler'
 import CheckboxEinkauf from '../../functions/CheckboxEinkauf';
 import Einkauffertigknopf from '../Knoepfe/Einkauffertigknopf';
@@ -11,20 +11,20 @@ const Einkaufsliste = (props) => {
   const randKey = () =>{
     setID(Math.random())
   }
+  
   const lesen = async()=>{    
     const data = await ausgeben(name)
     if(data){
       setinhalt(JSON.parse(data))
-      console.log(data)
     }
   }
-  useFocusEffect(React.useCallback(()=>{
+    useFocusEffect(React.useCallback(()=>{
   lesen()
   },[]))
   return (
     <>
     <View key={id} style={styles.Kat}>    
-    <Text style={{color:'#fff',fontSize:20,paddingBottom:10,alignSelf:'center'}}>Einkaufsliste</Text>
+    <Text style={{color:'black',fontSize:20,paddingBottom:10,alignSelf:'center'}}>Einkaufsliste</Text>
     
     
     {
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     borderTopWidth:2,
     borderTopColor:"black",
     alignSelf:"stretch",
-    backgroundColor:"#7e22ce"
+    backgroundColor:"#a21caf",
   },
   Thema:{
     color:'#fff',
@@ -61,11 +61,9 @@ const styles = StyleSheet.create({
   },
   Kat:{
     flex:1,
-    backgroundColor: 'gray',
+    backgroundColor: '#7fff00',
     alignItems:'flex-start',
     paddingTop:10,
-    borderWidth:2,
-    borderColor:"black",
   },
   row:{
     flexDirection:'row',

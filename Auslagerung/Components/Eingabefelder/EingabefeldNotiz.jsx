@@ -25,6 +25,10 @@ const EingabefeldNotiz = (props) => {
   }
     useEffect(()=>{
       settxtvalue('')
+      if(props.P==true){
+        settxtvalue('')
+        props.PF(false)
+      }
      },[props])
   return (
     <View >

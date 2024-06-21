@@ -3,6 +3,7 @@ import { SafeAreaView, Text, View,StyleSheet } from 'react-native'
 import {ScrollView } from 'react-native-gesture-handler'
 import Navknopf from '../Auslagerung/Components/Knoepfe/Navknopf'
 import Bearbeitungnotiz from '../Auslagerung/Components/Eingabeformular/Bearbeitungnotiz'
+import SSRK from '../Auslagerung/Components/Knoepfe/SecureStorageResetknopf'
 const AddStichpunkt = (props) => {
   useEffect(()=>{
 
@@ -15,11 +16,12 @@ const AddStichpunkt = (props) => {
       <View style={styles.container}>
         <View style={styles.ContainerFragebogen}>
         <View style={{flexDirection:'column', width:'100%',paddingTop:10}}>
-        <Text style={{color:'#fff',alignSelf:"center",fontSize:24}}>Stichpunktupdatemenü</Text>
+        <Text style={{color:'#fff',alignSelf:"center",fontSize:30,paddingBottom:20}}>Stichpunktupdatemenü</Text>
         <Bearbeitungnotiz navigation={props.navigation}/>
         </View>
         </View>
         </View>
+        <SSRK/>
       </ScrollView>      
     </SafeAreaView>
   </>

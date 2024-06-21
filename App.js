@@ -4,27 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 import Navbar from './Auslagerung/Components/Navbar';
 import { speichern,ausgeben,löschen,update} from './Auslagerung/functions/Services/SecureStorage/functionhandler'
 
-//setersteabfrage=false
-//setersteeinkaufabfrage=false
-/**
-
-    await löschen('ersteabfrage')
-    await löschen('Allgemein')
-    await löschen('Formulare')
-    await löschen('Geburtstage')
-    await löschen('Hausarbeiten')
-    await löschen('Reisecheckliste')
-    await löschen('Sonstiges')
-    await löschen('Termine')
-    await löschen('Einkaufsliste')
-
-
- */
 export default function App() {
   const startup= async()=>{
     
     const data= await ausgeben("ersteabfrage")
-    console.log(data)
     if (data==null || data==undefined){
       const data1=await speichern("ersteabfrage","true") 
       const data2=await speichern("Allgemein",JSON.stringify([]))
