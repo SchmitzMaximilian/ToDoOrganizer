@@ -8,7 +8,7 @@ const TitelTouch = (props) => {
     {
       props.show==props.V?
     <> 
-      <TouchableOpacity onPress={()=>props.setshow(props.V)}>
+      <TouchableOpacity onPress={()=>props.setshow(!props.V)}>
         <Text style={styles().Ueberschrift2pressed}>{props.T}</Text>
       </TouchableOpacity>
       <HülleKategorie/>
