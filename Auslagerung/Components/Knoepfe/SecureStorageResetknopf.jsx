@@ -1,6 +1,6 @@
 import React from 'react'
 import { Alert, StyleSheet, Text, TouchableOpacity } from 'react-native'
-import { löschen} from '../../functions/Services/SecureStorage/functionhandler'
+import { löschen, speichern} from '../../functions/Services/SecureStorage/functionhandler'
 const SSRK = () => {
   const deletealert=()=>
     Alert.alert(
